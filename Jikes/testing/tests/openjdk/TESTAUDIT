@@ -1,0 +1,371 @@
+Name:		RoundingTests
+Path:		java/math/BigDecimal
+An expected overflow does not occur and an exception is never correctly thrown
+
+Name:		CompareToTests
+Path:		java/math/BigDecimal
+CompareTo method from BigDecimal throws Arithmetic Exception about a negative exponent, no such issue with Hotspot. Some tests do not return the expected value even in hotspot, though no error is thrown
+
+Name:		Constructor
+Path:		java/math/BigDecimal
+The correct exception is not thrown when an incorrect constructor value is applied, instead a Sting index out of bound exception is thrown inside Big Decimal
+
+Name:		IntegralDivisionTests
+Path:
+An exception is thrown inside the classpath divideToIntegralValue method in BigDecimal, reports a negative scale where none is present (as far as I can tell)
+
+Name:		PowTests
+Path:		java/math/BigDecimal
+Extrema power tests fail, overflow tests cause outOfMemoryErrors which is potentiall erroneous
+
+Name:		AddTests
+Path:		java/math/BigDecimal
+Issues with big decimal implementaion throwing exceptions with extrema values
+
+Name:		DivideTests
+Path:		java/math/BigDecimal
+BigDecimals throws Arithmetic Exception: Rounding necassary. This could potentially just be a limitation rather than an error
+
+Name:		ZeroScalingTests
+Path:		java/math/BigDecimal
+An array index out of bounds exception occurs inside the big integer implementation when asked to add
+
+Name:		StrippingZerosTest
+Path:		java/math/BigDecimal
+Index out of bounds exception thrown inside BigDecimal when attempting to strip 0's from a solitary 0
+
+Name:		BigIntegerTest
+Path:		java/math/BigInteger
+No nextProbablePrime method available from BigInteger implementation
+
+Name:		Supplementary
+Path:		java/util/StringTokenizer
+StringTokenizer incorrectly uses supplied delimiters to tokenize
+
+Name:		ResetPos
+Path:		java/util/StringTokenizer
+StringTokenizer failes to correctly resent the position in the string, resulting in erreoneos strings, this is a result of incorrectly applying delimiters
+
+Name:		BSMethods
+Path:		java/util/BitSet
+Uses time elapsed, hence the test will never actually work under this framework. Regardless, it's a good set of tests that Jikes clearly fails at the moment.
+
+Name:		StickySize
+Path:		java/util/BitSet
+A complete failure, brief look at the test seems to indicate that it is a legitimate failure. Results are repeatable
+
+Name:		RetainAll
+Path:		java/util/EnumSet
+There doesn't seem to be a Jumbo and Regular implementaion of EnumSet, jut a base EnumSet implementation. The consequences of this I am unsure of.
+
+Name:		OneUniverse
+Path:		java/util/EnumSet
+This requires further investigation, results are repeatable. I think the ClassPath enumset implementation has a few issues....
+
+Name:		BogusEnumSet
+Path:		java/util/EnumSet
+Jikes failes to find java.util.RegularEnumSet, which fits with the above result, seems to indicate there is only one EnumSet, not the Dual Regular/Jumbo
+
+Name:		EnumSetBash
+Path:		java/util/EnumSet
+An exception is thrown when attempting to call EnumSet.allOf with an empty set, the doco for this indicates that this should not be the case, an error should only be thrown on a null pointer
+
+Name:		AllOf
+Path:		java/util/EnumSet
+An exception is thrown when attempting to call EnumSet.allOf with an empty set, the doco for this indicates that this should not be the case, an error should only be thrown on a null pointer. Same issue as EnumSetBash
+
+Name:		InsertWrongType
+Path:		java/util/EnumSet	
+An incorrect enum type is allowed to be added to an enum set without an expected exception being thrown
+
+Name:		ToString
+Path:		java/util/AbstractCollection
+General issues with toString not working on collections, presumably arise when a collection is added to itself
+
+Name:		ArrayObjectMethods
+Path:		java/util/Arrays
+Jikes fails different amounts each time, but the test seems ok. Also uses random input, however if all tests are passed the output is the same.
+
+Name:		Fill
+Path:		java/util/Arrays
+An exception was thrown in the correct place, but it was the wrong exception.
+
+Name:		CopyMethods
+Path:		java/util/Arrays
+Appears to be failing in Classpath implementation, Illegal argument exception way down the stack in Arrays.fill
+
+Name:		IteratorAtEnd
+Path:		java/util/Collection
+next() does not change iterator state if it throws NoSuchElementException, results in index out of bound exceptions
+
+Name:		BiggernYours
+Path:		java/util/Collection	
+Test has concurrent elements, although a full pass results in the same output Jikes seems to fail random amounts of tests.
+
+Name:		DistinctSeeds
+Path:		java/util/Random
+New Random objects are not supplied with different seeds
+
+Name:		HeadTailTypeError
+Path:		java/util/TreeMap
+An expected ClassCastException is never thrown, though the javadoc related to it implies it technically doesnt have to (needs confirmation)
+
+Name:		CheckedListBash
+Path:		java/util/Collections
+addAll just falls over and doesn't do anything.
+
+Name:		T6433170
+Path:		java/util/Collections
+Can't quite follow exactly whats happening here, from a distance it looks ok. 
+
+Name:		MinMax
+Path:		java/util/Collections
+Throws a very wrong NoSuchElementException
+
+Name:		ReverseOrder2
+Path:		java/util/Collections
+Collections.reverseOrder(comparator) fails miserably
+
+Name:		CheckedSetBash
+Path:		java/util/Collections
+an addAll completely fails to do anything
+
+Name:		ReverseOrder
+Path:		java/util/Collections
+Collections sort reverse comparator doesnt work, just goes by the normal comparator
+
+Name:		BigBinarySearch
+Path:		java/util/Collections
+General failures with large searches in AbstractList, I don't fully understand the ins and outs of whats happening but the test seems ok
+
+Name:		CheckedNull
+Path:		java/util/Collections
+Ton's of exceptions thrown where none exist under hotspot
+
+Name:		Frequency
+Path:		java/util/Collections
+Collections.shuffle on linked lists is completly broken, it removes and adds objects to the point of unusibility
+
+Name:		EmptyCollectionSerialization
+Path:		java/util/Collections
+Empty utility collections do not present as singleton sets as they should
+
+Name:		AsLifoQueue
+Path:		java/util/Collections
+Jikes does not thrown an exception when a string is attempted to be added to an abstract LinkedBlockingQueue of type null
+
+
+Name:		ReadObject
+Path:		java/util/Hashtable
+Something to do with wrapping inputs to a hastable? There is no non determinism here so I've marked it as good, but it will need a further review.
+
+Name:		Bug4512215
+Path:		java/util/Currency
+Classpath doesnt support currency code XBD, should be fixed with openJDK, not really a bug, just a limitation
+
+Name:		SimpleEntries
+Path:		java/util/AbstractMap
+SimpleImmutableEntry returns SimpleEntry when instanceof is used upon it
+
+Name:		ToString
+Path:		java/util/AbstractMap
+toString method in Abstract Map fails if size changes in between a call to size and an attempt to iterate
+
+Name:		Equals
+Path:		java/util/AbstractMap
+An exception is thrown when two TreeMaps have incomparable KV pairs, i.e. comparing a tree of (int, string) to one of (string, int) throws an exception when it should return false
+
+Name:		Bug6533203
+Path:		java/util/ArrayList
+Can't quite follow, looks like an exception isn't being thrown when it should, or perhaps the wrong one.
+
+Name:		ForgetMeNot
+Path:		java/util/PriorityQueue
+Index out of bounds exceptions inside priority queue implementation
+
+Name:		PriorityQueueSort
+Path:		java/util/PriorityQueue
+Something is very wrong with the removal operation on Priority Queues
+
+Name:		EnumMapBash
+Path:		java/util/EnumMap
+General EnumMap failings, test looks fine in terms of compliance with framework
+
+Name:		UUIDTest
+Path:		java/util/UUID
+UUID behaves incorrectly....in exactly what manner I'm not sure of, as it's a library item it should benefit from switching to OpenJDK. There are calls to random within the test however I'm pretty sure it's still deterministic from a pass/fail standpoint
+
+Name:		StockName
+Path:		java/util/Formattable
+Jikes doesn't like formatting in french.....
+
+Name:		NaNInfinityParsing
+Path:		java/lang/Float
+Jikes incorrectly passes illegal string NaNf as NaN
+
+Name:		ToLowerCase
+Path:		java/lang/String
+Jikes doesn't handle greek letters correctly
+
+Name:		Supplementary
+Path:		java/lang/String
+Issues with reading  a complicated string correctly
+
+Name:		RegionMatches
+Path:		java/lang/String
+Jikes doesnt quite match the spec when doing region matches with a negative length
+
+Name:		Encodings
+Path:		java/lang/String
+Jikes throws a NoSuchMethod error when trying to call a method within the class, this is really odd and needs further investigation
+
+Name:		ToUpperCase
+Path:		java/lang/String
+Again, greek letters and some other encodings don't work correctly
+
+Name:		Exceptions
+Path:		java/lang/Class/getMethod
+Jikes fails to throw a null pointer exception when it should
+
+Name:		NullInParamList
+Path:		java/lang/Class/getMethod
+Jikes throws a NullPointerException when a NoSuchMethodException is expected
+
+Name:		EnclosingMethodTests
+Path:		java/lang/Class/getEnclosingMethod
+Some vital calls don't look to be implemented with regards to getting enclosing methods.
+
+Name:		ForInnerClass
+Path:		java/lang/Class/getModifiers
+Jikes fails to realise an inner class is protected
+
+Name:		StripACC_SUPER
+Path:		java/lang/Class/getModifiers
+ACC_SUPER bit is not being stripped, which actually causes the issue below
+
+Name:		ResolveFrom
+Path:		java/lang/Class/getModifiers
+Jikes resolves with erroneous synchronized when using resolveFrom
+
+Name:		Exceptions
+Path:		java/lang/Class/getDeclaredField
+Jikes fails to throw a null pointer exception when it should
+
+Name:		StarInheritance
+Path:		java/lang/Class/getMethods
+Some issues with inheritance, this class is a rabbit hole but it's outcome is repeatable
+
+Name:		Exceptions
+Path:		java/lang/Class/getField
+Jikes fails to throw a null pointer exception when it should
+
+Name:		EnclosingConstructorTests
+Path:		java/lang/Class/getEnclosingConstructor
+Throws a not implemented exception
+
+Name:		Exceptions
+Path:		java/lang/Class/getDeclaredMethod
+Jikes fails to throw a null pointer exception when it should - yes, for the fourth time
+
+Name:		HypotTests
+Path:		java/lang/StrictMath
+No hypot method in strictmath, limitation of classpath
+
+Name:		Log10Tests
+Path:		java/lang/StrictMath
+General mathematical failings		
+
+Name:		Log1pTests
+Path:		java/lang/StrictMath
+No log1p method in strictmath, limitation of classpath
+
+Name:		Decode
+Path:		java/lang/Byte
+Illegal leading plus allowed without an exception being thrown
+
+Name:		Decode
+Path:		java/lang/Short
+Illegal leading plus allowed without an exception being thrown - same as above
+
+Name:		NullQueue
+Path:		java/lang/ref
+Null Queue arguments crash reference handling thread (I may have copied that straight from the test itself, but it seems to fit with what's happening.)
+
+Name:		Supplementary
+Path:		java/lang/StringBuffer
+Again, issues with reading a complicated string correctly
+
+Name:		AppendCharSequence
+Path:		java/lang/StringBuffer
+Jikes does not allow the appention of a null string, this does not match the spec
+
+Name:		Exceptions
+Path:		java/lang/StringBuffer
+Jikes throws the wanted exception, but it's not exactly worded as expected, it's not really a failure, gonna leave it in because it's a nice test and should pass with openJDK
+
+Name:		NaNInfinityParsing
+Path:		java/lang/Double
+Jikes incorrectly passes illegal string NaNf as NaN - same as earlier
+
+Name:		Decode
+Path:		java/lang/Long
+Another incorrectly allowed leading plus
+
+Name:		BitTwiddle
+Path:		java/lang/Long
+Signum breaks when using MIN_VALUE
+
+Name:		StackTraceSerialization
+Path:		java/lang/Throwable
+Basic test of serialization of stack trace information fails, no output on success which means differening traces between Jikes and Hotspot shouldn't cause issues if it works.
+
+Name:		Decode
+Path:		java/lang/Integer
+Again with the leading pluses
+
+Name:		BitTwiddle
+Path:		java/lang/Integer
+Signum is again, broken.
+
+Name:		Supplementary
+Path:		java/lang/StringBuilder
+Another string splitting issue
+
+Name:		Exception
+Path:		java/lang/StringBuilder
+Jikes doesn't output the exception exactly as expected, not a complete failure but should change with OpenJDK
+
+Name:		TestParameterAnnotations
+Path:		java/lang/reflect/Constructor
+Random null pointer exception thrown
+
+
+Name:		ExceedMaxDim
+Path:		java/lang/reflect/Array
+Jikes allows arrays above 256 dimensions, this is not to spec
+
+Name:		StringsAndBounds
+Path:		java/lang/reflect/Generics
+Lots of stuff going on, hard to follow, but there are definate issues with Jikes's implementation. Test results are repeatable
+
+Name:		Probe
+Path:		java/lang/reflect/Generics
+Straight up null pointer exception, further investigation needed
+
+Name:		TestC2
+Path:		java/lang/reflect/Generics
+More null pointer exceptions not present in hotspot
+
+Name:		TestC1
+Path:		java/lang/reflect/Generics
+And again!
+
+Name:		Boxing
+Path:		java/lang/reflect/Proxy
+Something to do with boxing...?? The test itself seems to fit the framework, overall result is repeatable.
+
+Name:		Test
+Path:		java/lang/reflect/Proxy
+Jikes throws an Illegal argument exception but I think it's looking in the wrong place...
+
+

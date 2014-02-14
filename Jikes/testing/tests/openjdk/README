@@ -1,0 +1,45 @@
+The OpenJDK Testing Readme.
+
+Overview:
+
+This testing suite is a collection of tests extracted from the OpenJDK libraries. The motivation behind this work is to generate a series of failings with the GNU Classpath libraries that are fixed by moving to the OpenJDK Libraries
+
+Operation:
+
+As per other tests in the Jikes environment, these tests can be invoked with the "--test-run openjdk" option, this option automatically selects the production build. Other builds can be used by using "-t openjdk" and specifying the desired build level. 
+
+This runs the ant build.xml file present, which in turn runs a Bash script by traversing the src folder, which generates a second ant file, build_testing.xml. The first ant script then runs the second, generated ant script, which actually does the testing.
+
+Test Format:
+
+Each .java file present in the src directory is individually tested, and thus must have a main method. The method of testing is to first compile the .java file using Javac, then run the resulting class file on the Hotspot VM (via use of the java command) the output of this is saved to a file, and compared against a Jikes run of the same file. If the files are identical, a success is recorded, if they differ a failure is recorded. This obviously implies that the test file must have some meaningful, deterministic (more on that later) output. Most examples contain within follow the "Blank for Pass, Error for Fail" pattern, which works quite well.
+
+Adding Tests:
+
+The motivation behind the dynamic generation was to allow the drag and drop of tests into the src folder. Every .java file present in any subfolder is tested. Package usage is avoided and it's effects are unknown, the structure is solely determined by the folder structure (e.g. It's fine to reference classes present in the same folder, no packages necessary). When creating ancillary classes, ensure they have a main method, even if it is blank. 
+
+Validity of Test Current Test Results:
+
+The tests included are a subset of the entire OpenJDK testing library. The tests selected here pass three criterea (there are a few exceptions, where this is the case a note has been made in the audit file discussed below):
+
+	1. They conclude in a reasonable timeframe, the entire library of approximatly 200 tests can be run in a few minutes on a reasonable machine
+
+	2. They fit within the testing framework, whereby differences in operation are expressed solely in terms of what is output to the console, as opposed to exit codes or other methods. The output of each test must also remain constant over multiple runs.
+	
+	3. Tests that fail, but are included, fail for a meaningful, repeatable reason. All failed tests included were autited (albeit briefly) with findings recorded in the (very informal) TestAudit file. The definition of meaningful is broad in this context, but roughly translates to a test that is expected to perform more in accordance with the Java specification under the use of the OpenJDK libraries than it does now with the Classpath ones. 
+
+The Build Jar Script:
+
+Also included is the build_jar.sh script, which builds a .jar file that performs the same basic tests, however packaged in a convenient jar! The script generates hotspot output for tests included in src/openJDKtests and generates a .jar that is portably runnable with no external dependencies. The jar can be run in verbose mode with the -v option or can be used to run specific tests from the package. ex
+	
+	java -jar OpenJDKTests.jar [-v] [Specific Tests]
+
+The script generates package information for files within the folders, this continues the idea of dragging and dropping tests. As long as the test has a main method and exists inside src/openJDKtests it will be included.
+
+
+Notes:
+
+These tests are aimed at the 1.6 Java Platform, there are some minor inconsistencies when running on 1.7 related to minor specification changes. 
+
+The non-jar test (--test-run openjdk build option) will only work if the Build.xml in the top level jikes directory is replaced with the one included, just follow the folder structure moving into the jikes directory.
+
