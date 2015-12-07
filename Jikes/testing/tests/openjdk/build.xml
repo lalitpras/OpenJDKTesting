@@ -10,25 +10,2495 @@
  ~  See the COPYRIGHT.txt file distributed with this work for information
  ~  regarding copyright ownership.
  -->
-<project name="openjdk" default="test" basedir=".">
+<project name="openjdk_testing" default="test" basedir=".">
+
+	<import file="../../../build/tests.xml" />
+	
+	<property name="main.java" location="src" />
+
+	<property name="build.classes" location="${build.tests.dir}/classes" />
+	
+	<property name="test.class.path" value="${build.classes}" />
+	
+	<!-- Compile -->
+	
+	<target name="compile" depends="init">
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Appendable" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Appendable" destdir="${build.classes}/openJDKtests/lang/Appendable" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/AssertionError" />
+		<javac srcdir="${main.java}/openJDKtests/lang/AssertionError" destdir="${build.classes}/openJDKtests/lang/AssertionError" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Boolean" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Boolean" destdir="${build.classes}/openJDKtests/lang/Boolean" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Byte" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Byte" destdir="${build.classes}/openJDKtests/lang/Byte" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Class" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Class" destdir="${build.classes}/openJDKtests/lang/Class" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Class/getClasses" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Class/getClasses" destdir="${build.classes}/openJDKtests/lang/Class/getClasses" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Class/getDeclaredClasses" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Class/getDeclaredClasses" destdir="${build.classes}/openJDKtests/lang/Class/getDeclaredClasses" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Class/getDeclaredField" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Class/getDeclaredField" destdir="${build.classes}/openJDKtests/lang/Class/getDeclaredField" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Class/getDeclaredMethod" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Class/getDeclaredMethod" destdir="${build.classes}/openJDKtests/lang/Class/getDeclaredMethod" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Class/getDeclaringClass" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Class/getDeclaringClass" destdir="${build.classes}/openJDKtests/lang/Class/getDeclaringClass" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Class/getEnclosingConstructor" />
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Class/getEnclosingMethod" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Class/getEnclosingMethod" destdir="${build.classes}/openJDKtests/lang/Class/getEnclosingMethod" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Class/getField" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Class/getField" destdir="${build.classes}/openJDKtests/lang/Class/getField" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Class/getMethod" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Class/getMethod" destdir="${build.classes}/openJDKtests/lang/Class/getMethod" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Class/getMethods" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Class/getMethods" destdir="${build.classes}/openJDKtests/lang/Class/getMethods" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Class/getModifiers" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Class/getModifiers" destdir="${build.classes}/openJDKtests/lang/Class/getModifiers" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Double" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Double" destdir="${build.classes}/openJDKtests/lang/Double" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Float" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Float" destdir="${build.classes}/openJDKtests/lang/Float" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/InheritableThreadLocal" />
+		<javac srcdir="${main.java}/openJDKtests/lang/InheritableThreadLocal" destdir="${build.classes}/openJDKtests/lang/InheritableThreadLocal" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Integer" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Integer" destdir="${build.classes}/openJDKtests/lang/Integer" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Long" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Long" destdir="${build.classes}/openJDKtests/lang/Long" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/ref" />
+		<javac srcdir="${main.java}/openJDKtests/lang/ref" destdir="${build.classes}/openJDKtests/lang/ref" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/reflect/Array" />
+		<javac srcdir="${main.java}/openJDKtests/lang/reflect/Array" destdir="${build.classes}/openJDKtests/lang/reflect/Array" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/reflect/Assignment" />
+		<javac srcdir="${main.java}/openJDKtests/lang/reflect/Assignment" destdir="${build.classes}/openJDKtests/lang/reflect/Assignment" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/reflect/Constructor" />
+		<javac srcdir="${main.java}/openJDKtests/lang/reflect/Constructor" destdir="${build.classes}/openJDKtests/lang/reflect/Constructor" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/reflect/Field" />
+		<javac srcdir="${main.java}/openJDKtests/lang/reflect/Field" destdir="${build.classes}/openJDKtests/lang/reflect/Field" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/reflect/Field/eightsixfour" />
+		<javac srcdir="${main.java}/openJDKtests/lang/reflect/Field/eightsixfour" destdir="${build.classes}/openJDKtests/lang/reflect/Field/eightsixfour" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/reflect/Generics" />
+		<javac srcdir="${main.java}/openJDKtests/lang/reflect/Generics" destdir="${build.classes}/openJDKtests/lang/reflect/Generics" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/reflect/Method" />
+		<javac srcdir="${main.java}/openJDKtests/lang/reflect/Method" destdir="${build.classes}/openJDKtests/lang/reflect/Method" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/reflect/Method/invoke" />
+		<javac srcdir="${main.java}/openJDKtests/lang/reflect/Method/invoke" destdir="${build.classes}/openJDKtests/lang/reflect/Method/invoke" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/reflect/Modifier" />
+		<javac srcdir="${main.java}/openJDKtests/lang/reflect/Modifier" destdir="${build.classes}/openJDKtests/lang/reflect/Modifier" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/reflect/Proxy" />
+		<javac srcdir="${main.java}/openJDKtests/lang/reflect/Proxy" destdir="${build.classes}/openJDKtests/lang/reflect/Proxy" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/reflect/Proxy/returnTypes" />
+		<javac srcdir="${main.java}/openJDKtests/lang/reflect/Proxy/returnTypes" destdir="${build.classes}/openJDKtests/lang/reflect/Proxy/returnTypes" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/ref/SoftReference" />
+		<javac srcdir="${main.java}/openJDKtests/lang/ref/SoftReference" destdir="${build.classes}/openJDKtests/lang/ref/SoftReference" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Short" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Short" destdir="${build.classes}/openJDKtests/lang/Short" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/StackTraceElement" />
+		<javac srcdir="${main.java}/openJDKtests/lang/StackTraceElement" destdir="${build.classes}/openJDKtests/lang/StackTraceElement" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/StrictMath" />
+		<javac srcdir="${main.java}/openJDKtests/lang/StrictMath" destdir="${build.classes}/openJDKtests/lang/StrictMath" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/String" />
+		<javac srcdir="${main.java}/openJDKtests/lang/String" destdir="${build.classes}/openJDKtests/lang/String" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/StringBuffer" />
+		<javac srcdir="${main.java}/openJDKtests/lang/StringBuffer" destdir="${build.classes}/openJDKtests/lang/StringBuffer" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/StringBuilder" />
+		<javac srcdir="${main.java}/openJDKtests/lang/StringBuilder" destdir="${build.classes}/openJDKtests/lang/StringBuilder" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/ThreadGroup" />
+		<javac srcdir="${main.java}/openJDKtests/lang/ThreadGroup" destdir="${build.classes}/openJDKtests/lang/ThreadGroup" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/ThreadLocal" />
+		<javac srcdir="${main.java}/openJDKtests/lang/ThreadLocal" destdir="${build.classes}/openJDKtests/lang/ThreadLocal" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/lang/Throwable" />
+		<javac srcdir="${main.java}/openJDKtests/lang/Throwable" destdir="${build.classes}/openJDKtests/lang/Throwable" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/math/BigDecimal" />
+		<javac srcdir="${main.java}/openJDKtests/math/BigDecimal" destdir="${build.classes}/openJDKtests/math/BigDecimal" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/math/BigInteger" />
+		<javac srcdir="${main.java}/openJDKtests/math/BigInteger" destdir="${build.classes}/openJDKtests/math/BigInteger" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/math/RoundingMode" />
+		<javac srcdir="${main.java}/openJDKtests/math/RoundingMode" destdir="${build.classes}/openJDKtests/math/RoundingMode" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/AbstractCollection" />
+		<javac srcdir="${main.java}/openJDKtests/util/AbstractCollection" destdir="${build.classes}/openJDKtests/util/AbstractCollection" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/AbstractList" />
+		<javac srcdir="${main.java}/openJDKtests/util/AbstractList" destdir="${build.classes}/openJDKtests/util/AbstractList" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/AbstractMap" />
+		<javac srcdir="${main.java}/openJDKtests/util/AbstractMap" destdir="${build.classes}/openJDKtests/util/AbstractMap" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/AbstractSequentialList" />
+		<javac srcdir="${main.java}/openJDKtests/util/AbstractSequentialList" destdir="${build.classes}/openJDKtests/util/AbstractSequentialList" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/ArrayList" />
+		<javac srcdir="${main.java}/openJDKtests/util/ArrayList" destdir="${build.classes}/openJDKtests/util/ArrayList" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/Arrays" />
+		<javac srcdir="${main.java}/openJDKtests/util/Arrays" destdir="${build.classes}/openJDKtests/util/Arrays" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/BitSet" />
+		<javac srcdir="${main.java}/openJDKtests/util/BitSet" destdir="${build.classes}/openJDKtests/util/BitSet" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/Collection" />
+		<javac srcdir="${main.java}/openJDKtests/util/Collection" destdir="${build.classes}/openJDKtests/util/Collection" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/Collections" />
+		<javac srcdir="${main.java}/openJDKtests/util/Collections" destdir="${build.classes}/openJDKtests/util/Collections" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/Currency" />
+		<javac srcdir="${main.java}/openJDKtests/util/Currency" destdir="${build.classes}/openJDKtests/util/Currency" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/Deque" />
+		<javac srcdir="${main.java}/openJDKtests/util/Deque" destdir="${build.classes}/openJDKtests/util/Deque" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/EnumMap" />
+		<javac srcdir="${main.java}/openJDKtests/util/EnumMap" destdir="${build.classes}/openJDKtests/util/EnumMap" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/EnumSet" />
+		<javac srcdir="${main.java}/openJDKtests/util/EnumSet" destdir="${build.classes}/openJDKtests/util/EnumSet" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/Formattable" />
+		<javac srcdir="${main.java}/openJDKtests/util/Formattable" destdir="${build.classes}/openJDKtests/util/Formattable" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/HashMap" />
+		<javac srcdir="${main.java}/openJDKtests/util/HashMap" destdir="${build.classes}/openJDKtests/util/HashMap" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/Hashtable" />
+		<javac srcdir="${main.java}/openJDKtests/util/Hashtable" destdir="${build.classes}/openJDKtests/util/Hashtable" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/IdentityHashMap" />
+		<javac srcdir="${main.java}/openJDKtests/util/IdentityHashMap" destdir="${build.classes}/openJDKtests/util/IdentityHashMap" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/IllegalFormatException" />
+		<javac srcdir="${main.java}/openJDKtests/util/IllegalFormatException" destdir="${build.classes}/openJDKtests/util/IllegalFormatException" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/LinkedHashMap" />
+		<javac srcdir="${main.java}/openJDKtests/util/LinkedHashMap" destdir="${build.classes}/openJDKtests/util/LinkedHashMap" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/LinkedHashSet" />
+		<javac srcdir="${main.java}/openJDKtests/util/LinkedHashSet" destdir="${build.classes}/openJDKtests/util/LinkedHashSet" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/LinkedList" />
+		<javac srcdir="${main.java}/openJDKtests/util/LinkedList" destdir="${build.classes}/openJDKtests/util/LinkedList" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/Map" />
+		<javac srcdir="${main.java}/openJDKtests/util/Map" destdir="${build.classes}/openJDKtests/util/Map" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/Observable" />
+		<javac srcdir="${main.java}/openJDKtests/util/Observable" destdir="${build.classes}/openJDKtests/util/Observable" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/PriorityQueue" />
+		<javac srcdir="${main.java}/openJDKtests/util/PriorityQueue" destdir="${build.classes}/openJDKtests/util/PriorityQueue" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/Random" />
+		<javac srcdir="${main.java}/openJDKtests/util/Random" destdir="${build.classes}/openJDKtests/util/Random" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/SimpleTimeZone" />
+		<javac srcdir="${main.java}/openJDKtests/util/SimpleTimeZone" destdir="${build.classes}/openJDKtests/util/SimpleTimeZone" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/StringTokenizer" />
+		<javac srcdir="${main.java}/openJDKtests/util/StringTokenizer" destdir="${build.classes}/openJDKtests/util/StringTokenizer" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/TimeZone" />
+		<javac srcdir="${main.java}/openJDKtests/util/TimeZone" destdir="${build.classes}/openJDKtests/util/TimeZone" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/TreeMap" />
+		<javac srcdir="${main.java}/openJDKtests/util/TreeMap" destdir="${build.classes}/openJDKtests/util/TreeMap" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/UUID" />
+		<javac srcdir="${main.java}/openJDKtests/util/UUID" destdir="${build.classes}/openJDKtests/util/UUID" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/Vector" />
+		<javac srcdir="${main.java}/openJDKtests/util/Vector" destdir="${build.classes}/openJDKtests/util/Vector" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+		<mkdir dir="${build.classes}/openJDKtests/util/WeakHashMap" />
+		<javac srcdir="${main.java}/openJDKtests/util/WeakHashMap" destdir="${build.classes}/openJDKtests/util/WeakHashMap" debug="true" source="1.6" target="1.6" includeantruntime="false" includes="*.java"/>
+
+	</target>
 
 	<!-- Test --> 
-	
-	<target name="test">
 		
-		<!-- Generate the testing ant file using the script -->
-		
-		<exec executable="/bin/bash">
-			
-			<arg value="build_tests.sh"/>
-			
-		</exec>
-		
-		<!-- Run the testing ant file -->
-		
-		<ant antfile="build_testing.xml" target="test"/>
-		
-	</target>
+<target name="test" depends="compile">
+		<!-- Baseline -->
+		<!-- openJDKtests/util/IllegalFormatException/Constructors.java -->
+		<echo message="Running openJDKtests/util/IllegalFormatException/Constructors.java on Hotspot"/>
+		<java classname="Constructors" output="src/openJDKtests/util/IllegalFormatException/Constructors.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/IllegalFormatException/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/LinkedHashMap/Basic.java -->
+		<echo message="Running openJDKtests/util/LinkedHashMap/Basic.java on Hotspot"/>
+		<java classname="Basic" output="src/openJDKtests/util/LinkedHashMap/Basic.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/LinkedHashMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/LinkedHashMap/Cache.java -->
+		<echo message="Running openJDKtests/util/LinkedHashMap/Cache.java on Hotspot"/>
+		<java classname="Cache" output="src/openJDKtests/util/LinkedHashMap/Cache.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/LinkedHashMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/LinkedHashMap/EmptyMapIterator.java -->
+		<echo message="Running openJDKtests/util/LinkedHashMap/EmptyMapIterator.java on Hotspot"/>
+		<java classname="EmptyMapIterator" output="src/openJDKtests/util/LinkedHashMap/EmptyMapIterator.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/LinkedHashMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Currency/Bug4512215.java -->
+		<echo message="Running openJDKtests/util/Currency/Bug4512215.java on Hotspot"/>
+		<java classname="Bug4512215" output="src/openJDKtests/util/Currency/Bug4512215.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Currency/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collection/IteratorAtEnd.java -->
+		<echo message="Running openJDKtests/util/Collection/IteratorAtEnd.java on Hotspot"/>
+		<java classname="IteratorAtEnd" output="src/openJDKtests/util/Collection/IteratorAtEnd.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collection/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collection/BiggernYours.java -->
+		<echo message="Running openJDKtests/util/Collection/BiggernYours.java on Hotspot"/>
+		<java classname="BiggernYours" output="src/openJDKtests/util/Collection/BiggernYours.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collection/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/PriorityQueue/RemoveContains.java -->
+		<echo message="Running openJDKtests/util/PriorityQueue/RemoveContains.java on Hotspot"/>
+		<java classname="RemoveContains" output="src/openJDKtests/util/PriorityQueue/RemoveContains.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/PriorityQueue/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/PriorityQueue/ForgetMeNot.java -->
+		<echo message="Running openJDKtests/util/PriorityQueue/ForgetMeNot.java on Hotspot"/>
+		<java classname="ForgetMeNot" output="src/openJDKtests/util/PriorityQueue/ForgetMeNot.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/PriorityQueue/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/PriorityQueue/PriorityQueueSort.java -->
+		<echo message="Running openJDKtests/util/PriorityQueue/PriorityQueueSort.java on Hotspot"/>
+		<java classname="PriorityQueueSort" output="src/openJDKtests/util/PriorityQueue/PriorityQueueSort.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/PriorityQueue/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/LinkedHashSet/Basic.java -->
+		<echo message="Running openJDKtests/util/LinkedHashSet/Basic.java on Hotspot"/>
+		<java classname="Basic" output="src/openJDKtests/util/LinkedHashSet/Basic.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/LinkedHashSet/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/TimeZone/ListTimeZones.java -->
+		<echo message="Running openJDKtests/util/TimeZone/ListTimeZones.java on Hotspot"/>
+		<java classname="ListTimeZones" output="src/openJDKtests/util/TimeZone/ListTimeZones.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/TimeZone/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/ArrayList/AddAll.java -->
+		<echo message="Running openJDKtests/util/ArrayList/AddAll.java on Hotspot"/>
+		<java classname="AddAll" output="src/openJDKtests/util/ArrayList/AddAll.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/ArrayList/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/ArrayList/Bug6533203.java -->
+		<echo message="Running openJDKtests/util/ArrayList/Bug6533203.java on Hotspot"/>
+		<java classname="Bug6533203" output="src/openJDKtests/util/ArrayList/Bug6533203.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/ArrayList/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/AbstractCollection/ToString.java -->
+		<echo message="Running openJDKtests/util/AbstractCollection/ToString.java on Hotspot"/>
+		<java classname="ToString" output="src/openJDKtests/util/AbstractCollection/ToString.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/AbstractCollection/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Hashtable/ReadObject.java -->
+		<echo message="Running openJDKtests/util/Hashtable/ReadObject.java on Hotspot"/>
+		<java classname="ReadObject" output="src/openJDKtests/util/Hashtable/ReadObject.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Hashtable/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Hashtable/EqualsCast.java -->
+		<echo message="Running openJDKtests/util/Hashtable/EqualsCast.java on Hotspot"/>
+		<java classname="EqualsCast" output="src/openJDKtests/util/Hashtable/EqualsCast.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Hashtable/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Hashtable/HashCode.java -->
+		<echo message="Running openJDKtests/util/Hashtable/HashCode.java on Hotspot"/>
+		<java classname="HashCode" output="src/openJDKtests/util/Hashtable/HashCode.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Hashtable/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Hashtable/IllegalLoadFactor.java -->
+		<echo message="Running openJDKtests/util/Hashtable/IllegalLoadFactor.java on Hotspot"/>
+		<java classname="IllegalLoadFactor" output="src/openJDKtests/util/Hashtable/IllegalLoadFactor.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Hashtable/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Observable/ClearChanged.java -->
+		<echo message="Running openJDKtests/util/Observable/ClearChanged.java on Hotspot"/>
+		<java classname="ClearChanged" output="src/openJDKtests/util/Observable/ClearChanged.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Observable/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/ReverseOrder.java -->
+		<echo message="Running openJDKtests/util/Collections/ReverseOrder.java on Hotspot"/>
+		<java classname="ReverseOrder" output="src/openJDKtests/util/Collections/ReverseOrder.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/NullComparator.java -->
+		<echo message="Running openJDKtests/util/Collections/NullComparator.java on Hotspot"/>
+		<java classname="NullComparator" output="src/openJDKtests/util/Collections/NullComparator.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/CheckedSetBash.java -->
+		<echo message="Running openJDKtests/util/Collections/CheckedSetBash.java on Hotspot"/>
+		<java classname="CheckedSetBash" output="src/openJDKtests/util/Collections/CheckedSetBash.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/T6433170.java -->
+		<echo message="Running openJDKtests/util/Collections/T6433170.java on Hotspot"/>
+		<java classname="T6433170" output="src/openJDKtests/util/Collections/T6433170.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/CheckedMapBash.java -->
+		<echo message="Running openJDKtests/util/Collections/CheckedMapBash.java on Hotspot"/>
+		<java classname="CheckedMapBash" output="src/openJDKtests/util/Collections/CheckedMapBash.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/Swap.java -->
+		<echo message="Running openJDKtests/util/Collections/Swap.java on Hotspot"/>
+		<java classname="Swap" output="src/openJDKtests/util/Collections/Swap.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/BigBinarySearch.java -->
+		<echo message="Running openJDKtests/util/Collections/BigBinarySearch.java on Hotspot"/>
+		<java classname="BigBinarySearch" output="src/openJDKtests/util/Collections/BigBinarySearch.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/BinarySearchNullComparator.java -->
+		<echo message="Running openJDKtests/util/Collections/BinarySearchNullComparator.java on Hotspot"/>
+		<java classname="BinarySearchNullComparator" output="src/openJDKtests/util/Collections/BinarySearchNullComparator.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/AsLifoQueue.java -->
+		<echo message="Running openJDKtests/util/Collections/AsLifoQueue.java on Hotspot"/>
+		<java classname="AsLifoQueue" output="src/openJDKtests/util/Collections/AsLifoQueue.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/Ser.java -->
+		<echo message="Running openJDKtests/util/Collections/Ser.java on Hotspot"/>
+		<java classname="Ser" output="src/openJDKtests/util/Collections/Ser.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/ReverseOrder2.java -->
+		<echo message="Running openJDKtests/util/Collections/ReverseOrder2.java on Hotspot"/>
+		<java classname="ReverseOrder2" output="src/openJDKtests/util/Collections/ReverseOrder2.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/WrappedNull.java -->
+		<echo message="Running openJDKtests/util/Collections/WrappedNull.java on Hotspot"/>
+		<java classname="WrappedNull" output="src/openJDKtests/util/Collections/WrappedNull.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/FindSubList.java -->
+		<echo message="Running openJDKtests/util/Collections/FindSubList.java on Hotspot"/>
+		<java classname="FindSubList" output="src/openJDKtests/util/Collections/FindSubList.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/RotateEmpty.java -->
+		<echo message="Running openJDKtests/util/Collections/RotateEmpty.java on Hotspot"/>
+		<java classname="RotateEmpty" output="src/openJDKtests/util/Collections/RotateEmpty.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/CheckedNull.java -->
+		<echo message="Running openJDKtests/util/Collections/CheckedNull.java on Hotspot"/>
+		<java classname="CheckedNull" output="src/openJDKtests/util/Collections/CheckedNull.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/ViewSynch.java -->
+		<echo message="Running openJDKtests/util/Collections/ViewSynch.java on Hotspot"/>
+		<java classname="ViewSynch" output="src/openJDKtests/util/Collections/ViewSynch.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/AddAll.java -->
+		<echo message="Running openJDKtests/util/Collections/AddAll.java on Hotspot"/>
+		<java classname="AddAll" output="src/openJDKtests/util/Collections/AddAll.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/CheckedListBash.java -->
+		<echo message="Running openJDKtests/util/Collections/CheckedListBash.java on Hotspot"/>
+		<java classname="CheckedListBash" output="src/openJDKtests/util/Collections/CheckedListBash.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/NCopies.java -->
+		<echo message="Running openJDKtests/util/Collections/NCopies.java on Hotspot"/>
+		<java classname="NCopies" output="src/openJDKtests/util/Collections/NCopies.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/MinMax.java -->
+		<echo message="Running openJDKtests/util/Collections/MinMax.java on Hotspot"/>
+		<java classname="MinMax" output="src/openJDKtests/util/Collections/MinMax.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/ReplaceAll.java -->
+		<echo message="Running openJDKtests/util/Collections/ReplaceAll.java on Hotspot"/>
+		<java classname="ReplaceAll" output="src/openJDKtests/util/Collections/ReplaceAll.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/Rotate.java -->
+		<echo message="Running openJDKtests/util/Collections/Rotate.java on Hotspot"/>
+		<java classname="Rotate" output="src/openJDKtests/util/Collections/Rotate.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/Enum.java -->
+		<echo message="Running openJDKtests/util/Collections/Enum.java on Hotspot"/>
+		<java classname="Enum" output="src/openJDKtests/util/Collections/Enum.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/Disjoint.java -->
+		<echo message="Running openJDKtests/util/Collections/Disjoint.java on Hotspot"/>
+		<java classname="Disjoint" output="src/openJDKtests/util/Collections/Disjoint.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/Frequency.java -->
+		<echo message="Running openJDKtests/util/Collections/Frequency.java on Hotspot"/>
+		<java classname="Frequency" output="src/openJDKtests/util/Collections/Frequency.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/SetFromMap.java -->
+		<echo message="Running openJDKtests/util/Collections/SetFromMap.java on Hotspot"/>
+		<java classname="SetFromMap" output="src/openJDKtests/util/Collections/SetFromMap.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Collections/EmptyCollectionSerialization.java -->
+		<echo message="Running openJDKtests/util/Collections/EmptyCollectionSerialization.java on Hotspot"/>
+		<java classname="EmptyCollectionSerialization" output="src/openJDKtests/util/Collections/EmptyCollectionSerialization.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Collections/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/AbstractMap/SimpleEntries.java -->
+		<echo message="Running openJDKtests/util/AbstractMap/SimpleEntries.java on Hotspot"/>
+		<java classname="SimpleEntries" output="src/openJDKtests/util/AbstractMap/SimpleEntries.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/AbstractMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/AbstractMap/AbstractMapClone.java -->
+		<echo message="Running openJDKtests/util/AbstractMap/AbstractMapClone.java on Hotspot"/>
+		<java classname="AbstractMapClone" output="src/openJDKtests/util/AbstractMap/AbstractMapClone.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/AbstractMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/AbstractMap/Equals.java -->
+		<echo message="Running openJDKtests/util/AbstractMap/Equals.java on Hotspot"/>
+		<java classname="Equals" output="src/openJDKtests/util/AbstractMap/Equals.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/AbstractMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/AbstractMap/ToString.java -->
+		<echo message="Running openJDKtests/util/AbstractMap/ToString.java on Hotspot"/>
+		<java classname="ToString" output="src/openJDKtests/util/AbstractMap/ToString.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/AbstractMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Arrays/ArrayObjectMethods.java -->
+		<echo message="Running openJDKtests/util/Arrays/ArrayObjectMethods.java on Hotspot"/>
+		<java classname="ArrayObjectMethods" output="src/openJDKtests/util/Arrays/ArrayObjectMethods.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Arrays/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Arrays/Big.java -->
+		<echo message="Running openJDKtests/util/Arrays/Big.java on Hotspot"/>
+		<java classname="Big" output="src/openJDKtests/util/Arrays/Big.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Arrays/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Arrays/Correct.java -->
+		<echo message="Running openJDKtests/util/Arrays/Correct.java on Hotspot"/>
+		<java classname="Correct" output="src/openJDKtests/util/Arrays/Correct.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Arrays/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Arrays/Fill.java -->
+		<echo message="Running openJDKtests/util/Arrays/Fill.java on Hotspot"/>
+		<java classname="Fill" output="src/openJDKtests/util/Arrays/Fill.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Arrays/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Arrays/CopyMethods.java -->
+		<echo message="Running openJDKtests/util/Arrays/CopyMethods.java on Hotspot"/>
+		<java classname="CopyMethods" output="src/openJDKtests/util/Arrays/CopyMethods.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Arrays/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/WeakHashMap/ZeroInitCap.java -->
+		<echo message="Running openJDKtests/util/WeakHashMap/ZeroInitCap.java on Hotspot"/>
+		<java classname="ZeroInitCap" output="src/openJDKtests/util/WeakHashMap/ZeroInitCap.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/WeakHashMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/WeakHashMap/Iteration.java -->
+		<echo message="Running openJDKtests/util/WeakHashMap/Iteration.java on Hotspot"/>
+		<java classname="Iteration" output="src/openJDKtests/util/WeakHashMap/Iteration.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/WeakHashMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Formattable/StockName.java -->
+		<echo message="Running openJDKtests/util/Formattable/StockName.java on Hotspot"/>
+		<java classname="StockName" output="src/openJDKtests/util/Formattable/StockName.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Formattable/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/EnumMap/ToArray.java -->
+		<echo message="Running openJDKtests/util/EnumMap/ToArray.java on Hotspot"/>
+		<java classname="ToArray" output="src/openJDKtests/util/EnumMap/ToArray.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/EnumMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/EnumMap/EnumMapBash.java -->
+		<echo message="Running openJDKtests/util/EnumMap/EnumMapBash.java on Hotspot"/>
+		<java classname="EnumMapBash" output="src/openJDKtests/util/EnumMap/EnumMapBash.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/EnumMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/IdentityHashMap/ToArray.java -->
+		<echo message="Running openJDKtests/util/IdentityHashMap/ToArray.java on Hotspot"/>
+		<java classname="ToArray" output="src/openJDKtests/util/IdentityHashMap/ToArray.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/IdentityHashMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/StringTokenizer/ResetPos.java -->
+		<echo message="Running openJDKtests/util/StringTokenizer/ResetPos.java on Hotspot"/>
+		<java classname="ResetPos" output="src/openJDKtests/util/StringTokenizer/ResetPos.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/StringTokenizer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/StringTokenizer/FormFeed.java -->
+		<echo message="Running openJDKtests/util/StringTokenizer/FormFeed.java on Hotspot"/>
+		<java classname="FormFeed" output="src/openJDKtests/util/StringTokenizer/FormFeed.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/StringTokenizer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/StringTokenizer/Supplementary.java -->
+		<echo message="Running openJDKtests/util/StringTokenizer/Supplementary.java on Hotspot"/>
+		<java classname="Supplementary" output="src/openJDKtests/util/StringTokenizer/Supplementary.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/StringTokenizer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Deque/ChorusLine.java -->
+		<echo message="Running openJDKtests/util/Deque/ChorusLine.java on Hotspot"/>
+		<java classname="ChorusLine" output="src/openJDKtests/util/Deque/ChorusLine.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Deque/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/TreeMap/SubMapClear.java -->
+		<echo message="Running openJDKtests/util/TreeMap/SubMapClear.java on Hotspot"/>
+		<java classname="SubMapClear" output="src/openJDKtests/util/TreeMap/SubMapClear.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/TreeMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/TreeMap/SubMap.java -->
+		<echo message="Running openJDKtests/util/TreeMap/SubMap.java on Hotspot"/>
+		<java classname="SubMap" output="src/openJDKtests/util/TreeMap/SubMap.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/TreeMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/TreeMap/NullAtEnd.java -->
+		<echo message="Running openJDKtests/util/TreeMap/NullAtEnd.java on Hotspot"/>
+		<java classname="NullAtEnd" output="src/openJDKtests/util/TreeMap/NullAtEnd.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/TreeMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/TreeMap/HeadTailTypeError.java -->
+		<echo message="Running openJDKtests/util/TreeMap/HeadTailTypeError.java on Hotspot"/>
+		<java classname="HeadTailTypeError" output="src/openJDKtests/util/TreeMap/HeadTailTypeError.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/TreeMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/TreeMap/ContainsValue.java -->
+		<echo message="Running openJDKtests/util/TreeMap/ContainsValue.java on Hotspot"/>
+		<java classname="ContainsValue" output="src/openJDKtests/util/TreeMap/ContainsValue.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/TreeMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/EnumSet/JumboRange.java -->
+		<echo message="Running openJDKtests/util/EnumSet/JumboRange.java on Hotspot"/>
+		<java classname="JumboRange" output="src/openJDKtests/util/EnumSet/JumboRange.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/EnumSet/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/EnumSet/EnumSetBash.java -->
+		<echo message="Running openJDKtests/util/EnumSet/EnumSetBash.java on Hotspot"/>
+		<java classname="EnumSetBash" output="src/openJDKtests/util/EnumSet/EnumSetBash.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/EnumSet/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/EnumSet/AllOf.java -->
+		<echo message="Running openJDKtests/util/EnumSet/AllOf.java on Hotspot"/>
+		<java classname="AllOf" output="src/openJDKtests/util/EnumSet/AllOf.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/EnumSet/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/EnumSet/InsertWrongType.java -->
+		<echo message="Running openJDKtests/util/EnumSet/InsertWrongType.java on Hotspot"/>
+		<java classname="InsertWrongType" output="src/openJDKtests/util/EnumSet/InsertWrongType.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/EnumSet/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/EnumSet/RetainAll.java -->
+		<echo message="Running openJDKtests/util/EnumSet/RetainAll.java on Hotspot"/>
+		<java classname="RetainAll" output="src/openJDKtests/util/EnumSet/RetainAll.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/EnumSet/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/EnumSet/Range.java -->
+		<echo message="Running openJDKtests/util/EnumSet/Range.java on Hotspot"/>
+		<java classname="Range" output="src/openJDKtests/util/EnumSet/Range.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/EnumSet/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/EnumSet/ComplementOf.java -->
+		<echo message="Running openJDKtests/util/EnumSet/ComplementOf.java on Hotspot"/>
+		<java classname="ComplementOf" output="src/openJDKtests/util/EnumSet/ComplementOf.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/EnumSet/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/EnumSet/BogusEnumSet.java -->
+		<echo message="Running openJDKtests/util/EnumSet/BogusEnumSet.java on Hotspot"/>
+		<java classname="BogusEnumSet" output="src/openJDKtests/util/EnumSet/BogusEnumSet.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/EnumSet/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/SimpleTimeZone/EndOfDay.java -->
+		<echo message="Running openJDKtests/util/SimpleTimeZone/EndOfDay.java on Hotspot"/>
+		<java classname="EndOfDay" output="src/openJDKtests/util/SimpleTimeZone/EndOfDay.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/SimpleTimeZone/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/BitSet/StickySize.java -->
+		<echo message="Running openJDKtests/util/BitSet/StickySize.java on Hotspot"/>
+		<java classname="StickySize" output="src/openJDKtests/util/BitSet/StickySize.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/BitSet/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/BitSet/And.java -->
+		<echo message="Running openJDKtests/util/BitSet/And.java on Hotspot"/>
+		<java classname="And" output="src/openJDKtests/util/BitSet/And.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/BitSet/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/BitSet/MemoryLeak.java -->
+		<echo message="Running openJDKtests/util/BitSet/MemoryLeak.java on Hotspot"/>
+		<java classname="MemoryLeak" output="src/openJDKtests/util/BitSet/MemoryLeak.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/BitSet/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/BitSet/BSMethods.java -->
+		<echo message="Running openJDKtests/util/BitSet/BSMethods.java on Hotspot"/>
+		<java classname="BSMethods" output="src/openJDKtests/util/BitSet/BSMethods.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/BitSet/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/AbstractSequentialList/AddAll.java -->
+		<echo message="Running openJDKtests/util/AbstractSequentialList/AddAll.java on Hotspot"/>
+		<java classname="AddAll" output="src/openJDKtests/util/AbstractSequentialList/AddAll.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/AbstractSequentialList/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/HashMap/SetValue.java -->
+		<echo message="Running openJDKtests/util/HashMap/SetValue.java on Hotspot"/>
+		<java classname="SetValue" output="src/openJDKtests/util/HashMap/SetValue.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/HashMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/HashMap/KeySetRemove.java -->
+		<echo message="Running openJDKtests/util/HashMap/KeySetRemove.java on Hotspot"/>
+		<java classname="KeySetRemove" output="src/openJDKtests/util/HashMap/KeySetRemove.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/HashMap/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Map/Get.java -->
+		<echo message="Running openJDKtests/util/Map/Get.java on Hotspot"/>
+		<java classname="Get" output="src/openJDKtests/util/Map/Get.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Map/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Random/NextBytes.java -->
+		<echo message="Running openJDKtests/util/Random/NextBytes.java on Hotspot"/>
+		<java classname="NextBytes" output="src/openJDKtests/util/Random/NextBytes.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Random/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Random/NextIntPowerOfTwoMod.java -->
+		<echo message="Running openJDKtests/util/Random/NextIntPowerOfTwoMod.java on Hotspot"/>
+		<java classname="NextIntPowerOfTwoMod" output="src/openJDKtests/util/Random/NextIntPowerOfTwoMod.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Random/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Random/DistinctSeeds.java -->
+		<echo message="Running openJDKtests/util/Random/DistinctSeeds.java on Hotspot"/>
+		<java classname="DistinctSeeds" output="src/openJDKtests/util/Random/DistinctSeeds.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Random/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/UUID/UUIDTest.java -->
+		<echo message="Running openJDKtests/util/UUID/UUIDTest.java on Hotspot"/>
+		<java classname="UUIDTest" output="src/openJDKtests/util/UUID/UUIDTest.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/UUID/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/UUID/Serial.java -->
+		<echo message="Running openJDKtests/util/UUID/Serial.java on Hotspot"/>
+		<java classname="Serial" output="src/openJDKtests/util/UUID/Serial.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/UUID/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/LinkedList/Remove.java -->
+		<echo message="Running openJDKtests/util/LinkedList/Remove.java on Hotspot"/>
+		<java classname="Remove" output="src/openJDKtests/util/LinkedList/Remove.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/LinkedList/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/LinkedList/AddAll.java -->
+		<echo message="Running openJDKtests/util/LinkedList/AddAll.java on Hotspot"/>
+		<java classname="AddAll" output="src/openJDKtests/util/LinkedList/AddAll.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/LinkedList/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/LinkedList/Clone.java -->
+		<echo message="Running openJDKtests/util/LinkedList/Clone.java on Hotspot"/>
+		<java classname="Clone" output="src/openJDKtests/util/LinkedList/Clone.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/LinkedList/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/LinkedList/ComodifiedRemove.java -->
+		<echo message="Running openJDKtests/util/LinkedList/ComodifiedRemove.java on Hotspot"/>
+		<java classname="ComodifiedRemove" output="src/openJDKtests/util/LinkedList/ComodifiedRemove.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/LinkedList/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/AbstractList/HasNextAfterException.java -->
+		<echo message="Running openJDKtests/util/AbstractList/HasNextAfterException.java on Hotspot"/>
+		<java classname="HasNextAfterException" output="src/openJDKtests/util/AbstractList/HasNextAfterException.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/AbstractList/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/AbstractList/FailFastIterator.java -->
+		<echo message="Running openJDKtests/util/AbstractList/FailFastIterator.java on Hotspot"/>
+		<java classname="FailFastIterator" output="src/openJDKtests/util/AbstractList/FailFastIterator.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/AbstractList/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Vector/CopyInto.java -->
+		<echo message="Running openJDKtests/util/Vector/CopyInto.java on Hotspot"/>
+		<java classname="CopyInto" output="src/openJDKtests/util/Vector/CopyInto.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Vector/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Vector/IllegalConstructorArgs.java -->
+		<echo message="Running openJDKtests/util/Vector/IllegalConstructorArgs.java on Hotspot"/>
+		<java classname="IllegalConstructorArgs" output="src/openJDKtests/util/Vector/IllegalConstructorArgs.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Vector/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Vector/SyncLastIndexOf.java -->
+		<echo message="Running openJDKtests/util/Vector/SyncLastIndexOf.java on Hotspot"/>
+		<java classname="SyncLastIndexOf" output="src/openJDKtests/util/Vector/SyncLastIndexOf.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Vector/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Vector/ComodifiedRemoveAllElements.java -->
+		<echo message="Running openJDKtests/util/Vector/ComodifiedRemoveAllElements.java on Hotspot"/>
+		<java classname="ComodifiedRemoveAllElements" output="src/openJDKtests/util/Vector/ComodifiedRemoveAllElements.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Vector/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/util/Vector/LastIndexOf.java -->
+		<echo message="Running openJDKtests/util/Vector/LastIndexOf.java on Hotspot"/>
+		<java classname="LastIndexOf" output="src/openJDKtests/util/Vector/LastIndexOf.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/util/Vector/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/RoundingMode/RoundingModeTests.java -->
+		<echo message="Running openJDKtests/math/RoundingMode/RoundingModeTests.java on Hotspot"/>
+		<java classname="RoundingModeTests" output="src/openJDKtests/math/RoundingMode/RoundingModeTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/RoundingMode/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigDecimal/NegateTests.java -->
+		<echo message="Running openJDKtests/math/BigDecimal/NegateTests.java on Hotspot"/>
+		<java classname="NegateTests" output="src/openJDKtests/math/BigDecimal/NegateTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigDecimal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigDecimal/StrippingZerosTest.java -->
+		<echo message="Running openJDKtests/math/BigDecimal/StrippingZerosTest.java on Hotspot"/>
+		<java classname="StrippingZerosTest" output="src/openJDKtests/math/BigDecimal/StrippingZerosTest.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigDecimal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigDecimal/DivideTests.java -->
+		<echo message="Running openJDKtests/math/BigDecimal/DivideTests.java on Hotspot"/>
+		<java classname="DivideTests" output="src/openJDKtests/math/BigDecimal/DivideTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigDecimal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigDecimal/ZeroScalingTests.java -->
+		<echo message="Running openJDKtests/math/BigDecimal/ZeroScalingTests.java on Hotspot"/>
+		<java classname="ZeroScalingTests" output="src/openJDKtests/math/BigDecimal/ZeroScalingTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigDecimal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigDecimal/AddTests.java -->
+		<echo message="Running openJDKtests/math/BigDecimal/AddTests.java on Hotspot"/>
+		<java classname="AddTests" output="src/openJDKtests/math/BigDecimal/AddTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigDecimal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigDecimal/RoundingTests.java -->
+		<echo message="Running openJDKtests/math/BigDecimal/RoundingTests.java on Hotspot"/>
+		<java classname="RoundingTests" output="src/openJDKtests/math/BigDecimal/RoundingTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigDecimal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigDecimal/IntegralDivisionTests.java -->
+		<echo message="Running openJDKtests/math/BigDecimal/IntegralDivisionTests.java on Hotspot"/>
+		<java classname="IntegralDivisionTests" output="src/openJDKtests/math/BigDecimal/IntegralDivisionTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigDecimal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigDecimal/CompareToTests.java -->
+		<echo message="Running openJDKtests/math/BigDecimal/CompareToTests.java on Hotspot"/>
+		<java classname="CompareToTests" output="src/openJDKtests/math/BigDecimal/CompareToTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigDecimal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigDecimal/MultiplyTests.java -->
+		<echo message="Running openJDKtests/math/BigDecimal/MultiplyTests.java on Hotspot"/>
+		<java classname="MultiplyTests" output="src/openJDKtests/math/BigDecimal/MultiplyTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigDecimal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigDecimal/Constructor.java -->
+		<echo message="Running openJDKtests/math/BigDecimal/Constructor.java on Hotspot"/>
+		<java classname="Constructor" output="src/openJDKtests/math/BigDecimal/Constructor.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigDecimal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigDecimal/ScaleByPowerOfTenTests.java -->
+		<echo message="Running openJDKtests/math/BigDecimal/ScaleByPowerOfTenTests.java on Hotspot"/>
+		<java classname="ScaleByPowerOfTenTests" output="src/openJDKtests/math/BigDecimal/ScaleByPowerOfTenTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigDecimal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigDecimal/SerializationTests.java -->
+		<echo message="Running openJDKtests/math/BigDecimal/SerializationTests.java on Hotspot"/>
+		<java classname="SerializationTests" output="src/openJDKtests/math/BigDecimal/SerializationTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigDecimal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigDecimal/PowTests.java -->
+		<echo message="Running openJDKtests/math/BigDecimal/PowTests.java on Hotspot"/>
+		<java classname="PowTests" output="src/openJDKtests/math/BigDecimal/PowTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigDecimal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigDecimal/FloatDoubleValueTests.java -->
+		<echo message="Running openJDKtests/math/BigDecimal/FloatDoubleValueTests.java on Hotspot"/>
+		<java classname="FloatDoubleValueTests" output="src/openJDKtests/math/BigDecimal/FloatDoubleValueTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigDecimal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigDecimal/ToPlainStringTests.java -->
+		<echo message="Running openJDKtests/math/BigDecimal/ToPlainStringTests.java on Hotspot"/>
+		<java classname="ToPlainStringTests" output="src/openJDKtests/math/BigDecimal/ToPlainStringTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigDecimal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigInteger/ProbablePrime.java -->
+		<echo message="Running openJDKtests/math/BigInteger/ProbablePrime.java on Hotspot"/>
+		<java classname="ProbablePrime" output="src/openJDKtests/math/BigInteger/ProbablePrime.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigInteger/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigInteger/ModPow.java -->
+		<echo message="Running openJDKtests/math/BigInteger/ModPow.java on Hotspot"/>
+		<java classname="ModPow" output="src/openJDKtests/math/BigInteger/ModPow.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigInteger/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigInteger/OperatorNpeTests.java -->
+		<echo message="Running openJDKtests/math/BigInteger/OperatorNpeTests.java on Hotspot"/>
+		<java classname="OperatorNpeTests" output="src/openJDKtests/math/BigInteger/OperatorNpeTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigInteger/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigInteger/BigIntegerTest.java -->
+		<echo message="Running openJDKtests/math/BigInteger/BigIntegerTest.java on Hotspot"/>
+		<java classname="BigIntegerTest" output="src/openJDKtests/math/BigInteger/BigIntegerTest.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigInteger/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/math/BigInteger/UnicodeConstructor.java -->
+		<echo message="Running openJDKtests/math/BigInteger/UnicodeConstructor.java on Hotspot"/>
+		<java classname="UnicodeConstructor" output="src/openJDKtests/math/BigInteger/UnicodeConstructor.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/math/BigInteger/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Throwable/StackTraceSerialization.java -->
+		<echo message="Running openJDKtests/lang/Throwable/StackTraceSerialization.java on Hotspot"/>
+		<java classname="StackTraceSerialization" output="src/openJDKtests/lang/Throwable/StackTraceSerialization.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Throwable/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Throwable/LocalizedMessage.java -->
+		<echo message="Running openJDKtests/lang/Throwable/LocalizedMessage.java on Hotspot"/>
+		<java classname="LocalizedMessage" output="src/openJDKtests/lang/Throwable/LocalizedMessage.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Throwable/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Throwable/LegacyChainedExceptionSerialization.java -->
+		<echo message="Running openJDKtests/lang/Throwable/LegacyChainedExceptionSerialization.java on Hotspot"/>
+		<java classname="LegacyChainedExceptionSerialization" output="src/openJDKtests/lang/Throwable/LegacyChainedExceptionSerialization.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Throwable/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Throwable/ChainedExceptions.java -->
+		<echo message="Running openJDKtests/lang/Throwable/ChainedExceptions.java on Hotspot"/>
+		<java classname="ChainedExceptions" output="src/openJDKtests/lang/Throwable/ChainedExceptions.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Throwable/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Throwable/NewChainedExceptions.java -->
+		<echo message="Running openJDKtests/lang/Throwable/NewChainedExceptions.java on Hotspot"/>
+		<java classname="NewChainedExceptions" output="src/openJDKtests/lang/Throwable/NewChainedExceptions.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Throwable/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Float/ParseFloat.java -->
+		<echo message="Running openJDKtests/lang/Float/ParseFloat.java on Hotspot"/>
+		<java classname="ParseFloat" output="src/openJDKtests/lang/Float/ParseFloat.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Float/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Float/Extrema.java -->
+		<echo message="Running openJDKtests/lang/Float/Extrema.java on Hotspot"/>
+		<java classname="Extrema" output="src/openJDKtests/lang/Float/Extrema.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Float/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Float/Constants.java -->
+		<echo message="Running openJDKtests/lang/Float/Constants.java on Hotspot"/>
+		<java classname="Constants" output="src/openJDKtests/lang/Float/Constants.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Float/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Float/NaNInfinityParsing.java -->
+		<echo message="Running openJDKtests/lang/Float/NaNInfinityParsing.java on Hotspot"/>
+		<java classname="NaNInfinityParsing" output="src/openJDKtests/lang/Float/NaNInfinityParsing.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Float/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/ThreadLocal/TestThreadId.java -->
+		<echo message="Running openJDKtests/lang/ThreadLocal/TestThreadId.java on Hotspot"/>
+		<java classname="TestThreadId" output="src/openJDKtests/lang/ThreadLocal/TestThreadId.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/ThreadLocal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/ThreadLocal/MemoryLeak.java -->
+		<echo message="Running openJDKtests/lang/ThreadLocal/MemoryLeak.java on Hotspot"/>
+		<java classname="MemoryLeak" output="src/openJDKtests/lang/ThreadLocal/MemoryLeak.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/ThreadLocal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/ThreadLocal/Basic.java -->
+		<echo message="Running openJDKtests/lang/ThreadLocal/Basic.java on Hotspot"/>
+		<java classname="Basic" output="src/openJDKtests/lang/ThreadLocal/Basic.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/ThreadLocal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/ThreadLocal/InitialValue.java -->
+		<echo message="Running openJDKtests/lang/ThreadLocal/InitialValue.java on Hotspot"/>
+		<java classname="InitialValue" output="src/openJDKtests/lang/ThreadLocal/InitialValue.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/ThreadLocal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/ThreadLocal/ThreadId.java -->
+		<echo message="Running openJDKtests/lang/ThreadLocal/ThreadId.java on Hotspot"/>
+		<java classname="ThreadId" output="src/openJDKtests/lang/ThreadLocal/ThreadId.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/ThreadLocal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/ThreadLocal/TLRemoveTest.java -->
+		<echo message="Running openJDKtests/lang/ThreadLocal/TLRemoveTest.java on Hotspot"/>
+		<java classname="TLRemoveTest" output="src/openJDKtests/lang/ThreadLocal/TLRemoveTest.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/ThreadLocal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Integer/BitTwiddle.java -->
+		<echo message="Running openJDKtests/lang/Integer/BitTwiddle.java on Hotspot"/>
+		<java classname="BitTwiddle" output="src/openJDKtests/lang/Integer/BitTwiddle.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Integer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Integer/ParsingTest.java -->
+		<echo message="Running openJDKtests/lang/Integer/ParsingTest.java on Hotspot"/>
+		<java classname="ParsingTest" output="src/openJDKtests/lang/Integer/ParsingTest.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Integer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Integer/GetInteger.java -->
+		<echo message="Running openJDKtests/lang/Integer/GetInteger.java on Hotspot"/>
+		<java classname="GetInteger" output="src/openJDKtests/lang/Integer/GetInteger.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Integer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Integer/Decode.java -->
+		<echo message="Running openJDKtests/lang/Integer/Decode.java on Hotspot"/>
+		<java classname="Decode" output="src/openJDKtests/lang/Integer/Decode.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Integer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Short/ByteSwap.java -->
+		<echo message="Running openJDKtests/lang/Short/ByteSwap.java on Hotspot"/>
+		<java classname="ByteSwap" output="src/openJDKtests/lang/Short/ByteSwap.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Short/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Short/Decode.java -->
+		<echo message="Running openJDKtests/lang/Short/Decode.java on Hotspot"/>
+		<java classname="Decode" output="src/openJDKtests/lang/Short/Decode.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Short/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Long/GetLong.java -->
+		<echo message="Running openJDKtests/lang/Long/GetLong.java on Hotspot"/>
+		<java classname="GetLong" output="src/openJDKtests/lang/Long/GetLong.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Long/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Long/BitTwiddle.java -->
+		<echo message="Running openJDKtests/lang/Long/BitTwiddle.java on Hotspot"/>
+		<java classname="BitTwiddle" output="src/openJDKtests/lang/Long/BitTwiddle.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Long/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Long/ParsingTest.java -->
+		<echo message="Running openJDKtests/lang/Long/ParsingTest.java on Hotspot"/>
+		<java classname="ParsingTest" output="src/openJDKtests/lang/Long/ParsingTest.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Long/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Long/Decode.java -->
+		<echo message="Running openJDKtests/lang/Long/Decode.java on Hotspot"/>
+		<java classname="Decode" output="src/openJDKtests/lang/Long/Decode.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Long/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StrictMath/Expm1Tests.java -->
+		<echo message="Running openJDKtests/lang/StrictMath/Expm1Tests.java on Hotspot"/>
+		<java classname="Expm1Tests" output="src/openJDKtests/lang/StrictMath/Expm1Tests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StrictMath/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StrictMath/Tests.java -->
+		<echo message="Running openJDKtests/lang/StrictMath/Tests.java on Hotspot"/>
+		<java classname="Tests" output="src/openJDKtests/lang/StrictMath/Tests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StrictMath/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StrictMath/CubeRootTests.java -->
+		<echo message="Running openJDKtests/lang/StrictMath/CubeRootTests.java on Hotspot"/>
+		<java classname="CubeRootTests" output="src/openJDKtests/lang/StrictMath/CubeRootTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StrictMath/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StrictMath/Log10Tests.java -->
+		<echo message="Running openJDKtests/lang/StrictMath/Log10Tests.java on Hotspot"/>
+		<java classname="Log10Tests" output="src/openJDKtests/lang/StrictMath/Log10Tests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StrictMath/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StrictMath/Log1pTests.java -->
+		<echo message="Running openJDKtests/lang/StrictMath/Log1pTests.java on Hotspot"/>
+		<java classname="Log1pTests" output="src/openJDKtests/lang/StrictMath/Log1pTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StrictMath/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StrictMath/HyperbolicTests.java -->
+		<echo message="Running openJDKtests/lang/StrictMath/HyperbolicTests.java on Hotspot"/>
+		<java classname="HyperbolicTests" output="src/openJDKtests/lang/StrictMath/HyperbolicTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StrictMath/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StrictMath/HypotTests.java -->
+		<echo message="Running openJDKtests/lang/StrictMath/HypotTests.java on Hotspot"/>
+		<java classname="HypotTests" output="src/openJDKtests/lang/StrictMath/HypotTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StrictMath/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Constructor/TestParameterAnnotations.java -->
+		<echo message="Running openJDKtests/lang/reflect/Constructor/TestParameterAnnotations.java on Hotspot"/>
+		<java classname="TestParameterAnnotations" output="src/openJDKtests/lang/reflect/Constructor/TestParameterAnnotations.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Constructor/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Proxy/Boxing.java -->
+		<echo message="Running openJDKtests/lang/reflect/Proxy/Boxing.java on Hotspot"/>
+		<java classname="Boxing" output="src/openJDKtests/lang/reflect/Proxy/Boxing.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Proxy/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Proxy/returnTypes/Test.java -->
+		<echo message="Running openJDKtests/lang/reflect/Proxy/returnTypes/Test.java on Hotspot"/>
+		<java classname="Test" output="src/openJDKtests/lang/reflect/Proxy/returnTypes/Test.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Proxy/returnTypes/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Proxy/ClassRestrictions.java -->
+		<echo message="Running openJDKtests/lang/reflect/Proxy/ClassRestrictions.java on Hotspot"/>
+		<java classname="ClassRestrictions" output="src/openJDKtests/lang/reflect/Proxy/ClassRestrictions.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Proxy/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Proxy/CharType.java -->
+		<echo message="Running openJDKtests/lang/reflect/Proxy/CharType.java on Hotspot"/>
+		<java classname="CharType" output="src/openJDKtests/lang/reflect/Proxy/CharType.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Proxy/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Modifier/toStringTest.java -->
+		<echo message="Running openJDKtests/lang/reflect/Modifier/toStringTest.java on Hotspot"/>
+		<java classname="toStringTest" output="src/openJDKtests/lang/reflect/Modifier/toStringTest.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Modifier/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Array/ExceedMaxDim.java -->
+		<echo message="Running openJDKtests/lang/reflect/Array/ExceedMaxDim.java on Hotspot"/>
+		<java classname="ExceedMaxDim" output="src/openJDKtests/lang/reflect/Array/ExceedMaxDim.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Array/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Field/Set.java -->
+		<echo message="Running openJDKtests/lang/reflect/Field/Set.java on Hotspot"/>
+		<java classname="Set" output="src/openJDKtests/lang/reflect/Field/Set.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Field/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Field/eightsixfour/StaticFieldTest.java -->
+		<echo message="Running openJDKtests/lang/reflect/Field/eightsixfour/StaticFieldTest.java on Hotspot"/>
+		<java classname="StaticFieldTest" output="src/openJDKtests/lang/reflect/Field/eightsixfour/StaticFieldTest.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Field/eightsixfour/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Assignment/ArrayAssignment.java -->
+		<echo message="Running openJDKtests/lang/reflect/Assignment/ArrayAssignment.java on Hotspot"/>
+		<java classname="ArrayAssignment" output="src/openJDKtests/lang/reflect/Assignment/ArrayAssignment.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Assignment/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Generics/TestParameterizedType.java -->
+		<echo message="Running openJDKtests/lang/reflect/Generics/TestParameterizedType.java on Hotspot"/>
+		<java classname="TestParameterizedType" output="src/openJDKtests/lang/reflect/Generics/TestParameterizedType.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Generics/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Generics/StringsAndBounds.java -->
+		<echo message="Running openJDKtests/lang/reflect/Generics/StringsAndBounds.java on Hotspot"/>
+		<java classname="StringsAndBounds" output="src/openJDKtests/lang/reflect/Generics/StringsAndBounds.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Generics/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Generics/TestC2.java -->
+		<echo message="Running openJDKtests/lang/reflect/Generics/TestC2.java on Hotspot"/>
+		<java classname="TestC2" output="src/openJDKtests/lang/reflect/Generics/TestC2.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Generics/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Generics/getAnnotationTest.java -->
+		<echo message="Running openJDKtests/lang/reflect/Generics/getAnnotationTest.java on Hotspot"/>
+		<java classname="getAnnotationTest" output="src/openJDKtests/lang/reflect/Generics/getAnnotationTest.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Generics/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Generics/Probe.java -->
+		<echo message="Running openJDKtests/lang/reflect/Generics/Probe.java on Hotspot"/>
+		<java classname="Probe" output="src/openJDKtests/lang/reflect/Generics/Probe.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Generics/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Generics/TestN1.java -->
+		<echo message="Running openJDKtests/lang/reflect/Generics/TestN1.java on Hotspot"/>
+		<java classname="TestN1" output="src/openJDKtests/lang/reflect/Generics/TestN1.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Generics/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Generics/exceptionCauseTest.java -->
+		<echo message="Running openJDKtests/lang/reflect/Generics/exceptionCauseTest.java on Hotspot"/>
+		<java classname="exceptionCauseTest" output="src/openJDKtests/lang/reflect/Generics/exceptionCauseTest.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Generics/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Generics/TestC1.java -->
+		<echo message="Running openJDKtests/lang/reflect/Generics/TestC1.java on Hotspot"/>
+		<java classname="TestC1" output="src/openJDKtests/lang/reflect/Generics/TestC1.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Generics/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Method/invoke/IllegalAccessInInvoke.java -->
+		<echo message="Running openJDKtests/lang/reflect/Method/invoke/IllegalAccessInInvoke.java on Hotspot"/>
+		<java classname="IllegalAccessInInvoke" output="src/openJDKtests/lang/reflect/Method/invoke/IllegalAccessInInvoke.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Method/invoke/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Method/invoke/ErrorInInvoke.java -->
+		<echo message="Running openJDKtests/lang/reflect/Method/invoke/ErrorInInvoke.java on Hotspot"/>
+		<java classname="ErrorInInvoke" output="src/openJDKtests/lang/reflect/Method/invoke/ErrorInInvoke.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Method/invoke/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/reflect/Method/InheritedInterfaceMethods.java -->
+		<echo message="Running openJDKtests/lang/reflect/Method/InheritedInterfaceMethods.java on Hotspot"/>
+		<java classname="InheritedInterfaceMethods" output="src/openJDKtests/lang/reflect/Method/InheritedInterfaceMethods.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/reflect/Method/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Byte/Decode.java -->
+		<echo message="Running openJDKtests/lang/Byte/Decode.java on Hotspot"/>
+		<java classname="Decode" output="src/openJDKtests/lang/Byte/Decode.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Byte/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StackTraceElement/PublicConstructor.java -->
+		<echo message="Running openJDKtests/lang/StackTraceElement/PublicConstructor.java on Hotspot"/>
+		<java classname="PublicConstructor" output="src/openJDKtests/lang/StackTraceElement/PublicConstructor.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StackTraceElement/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/AssertionError/Cause.java -->
+		<echo message="Running openJDKtests/lang/AssertionError/Cause.java on Hotspot"/>
+		<java classname="Cause" output="src/openJDKtests/lang/AssertionError/Cause.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/AssertionError/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/getClasses/Sanity.java -->
+		<echo message="Running openJDKtests/lang/Class/getClasses/Sanity.java on Hotspot"/>
+		<java classname="Sanity" output="src/openJDKtests/lang/Class/getClasses/Sanity.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/getClasses/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/Cast.java -->
+		<echo message="Running openJDKtests/lang/Class/Cast.java on Hotspot"/>
+		<java classname="Cast" output="src/openJDKtests/lang/Class/Cast.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/getEnclosingConstructor/EnclosingConstructorTests.java -->
+		<echo message="Running openJDKtests/lang/Class/getEnclosingConstructor/EnclosingConstructorTests.java on Hotspot"/>
+		<java classname="EnclosingConstructorTests" output="src/openJDKtests/lang/Class/getEnclosingConstructor/EnclosingConstructorTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/getEnclosingConstructor/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/IsSynthetic.java -->
+		<echo message="Running openJDKtests/lang/Class/IsSynthetic.java on Hotspot"/>
+		<java classname="IsSynthetic" output="src/openJDKtests/lang/Class/IsSynthetic.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/getMethod/Exceptions.java -->
+		<echo message="Running openJDKtests/lang/Class/getMethod/Exceptions.java on Hotspot"/>
+		<java classname="Exceptions" output="src/openJDKtests/lang/Class/getMethod/Exceptions.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/getMethod/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/getMethod/NullInParamList.java -->
+		<echo message="Running openJDKtests/lang/Class/getMethod/NullInParamList.java on Hotspot"/>
+		<java classname="NullInParamList" output="src/openJDKtests/lang/Class/getMethod/NullInParamList.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/getMethod/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/getModifiers/ForStaticInnerClass.java -->
+		<echo message="Running openJDKtests/lang/Class/getModifiers/ForStaticInnerClass.java on Hotspot"/>
+		<java classname="ForStaticInnerClass" output="src/openJDKtests/lang/Class/getModifiers/ForStaticInnerClass.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/getModifiers/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/getModifiers/ResolveFrom.java -->
+		<echo message="Running openJDKtests/lang/Class/getModifiers/ResolveFrom.java on Hotspot"/>
+		<java classname="ResolveFrom" output="src/openJDKtests/lang/Class/getModifiers/ResolveFrom.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/getModifiers/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/getModifiers/StripACC_SUPER.java -->
+		<echo message="Running openJDKtests/lang/Class/getModifiers/StripACC_SUPER.java on Hotspot"/>
+		<java classname="StripACC_SUPER" output="src/openJDKtests/lang/Class/getModifiers/StripACC_SUPER.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/getModifiers/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/getModifiers/ForInnerClass.java -->
+		<echo message="Running openJDKtests/lang/Class/getModifiers/ForInnerClass.java on Hotspot"/>
+		<java classname="ForInnerClass" output="src/openJDKtests/lang/Class/getModifiers/ForInnerClass.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/getModifiers/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/getDeclaredClasses/Sanity.java -->
+		<echo message="Running openJDKtests/lang/Class/getDeclaredClasses/Sanity.java on Hotspot"/>
+		<java classname="Sanity" output="src/openJDKtests/lang/Class/getDeclaredClasses/Sanity.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/getDeclaredClasses/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/getEnclosingMethod/EnclosingMethodTests.java -->
+		<echo message="Running openJDKtests/lang/Class/getEnclosingMethod/EnclosingMethodTests.java on Hotspot"/>
+		<java classname="EnclosingMethodTests" output="src/openJDKtests/lang/Class/getEnclosingMethod/EnclosingMethodTests.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/getEnclosingMethod/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/getDeclaringClass/Sanity.java -->
+		<echo message="Running openJDKtests/lang/Class/getDeclaringClass/Sanity.java on Hotspot"/>
+		<java classname="Sanity" output="src/openJDKtests/lang/Class/getDeclaringClass/Sanity.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/getDeclaringClass/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/getDeclaredMethod/Exceptions.java -->
+		<echo message="Running openJDKtests/lang/Class/getDeclaredMethod/Exceptions.java on Hotspot"/>
+		<java classname="Exceptions" output="src/openJDKtests/lang/Class/getDeclaredMethod/Exceptions.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/getDeclaredMethod/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/IsAnnotationType.java -->
+		<echo message="Running openJDKtests/lang/Class/IsAnnotationType.java on Hotspot"/>
+		<java classname="IsAnnotationType" output="src/openJDKtests/lang/Class/IsAnnotationType.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/getDeclaredField/Exceptions.java -->
+		<echo message="Running openJDKtests/lang/Class/getDeclaredField/Exceptions.java on Hotspot"/>
+		<java classname="Exceptions" output="src/openJDKtests/lang/Class/getDeclaredField/Exceptions.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/getDeclaredField/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/getMethods/NonPublicStaticInitializer.java -->
+		<echo message="Running openJDKtests/lang/Class/getMethods/NonPublicStaticInitializer.java on Hotspot"/>
+		<java classname="NonPublicStaticInitializer" output="src/openJDKtests/lang/Class/getMethods/NonPublicStaticInitializer.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/getMethods/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/getMethods/StarInheritance.java -->
+		<echo message="Running openJDKtests/lang/Class/getMethods/StarInheritance.java on Hotspot"/>
+		<java classname="StarInheritance" output="src/openJDKtests/lang/Class/getMethods/StarInheritance.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/getMethods/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Class/getField/Exceptions.java -->
+		<echo message="Running openJDKtests/lang/Class/getField/Exceptions.java on Hotspot"/>
+		<java classname="Exceptions" output="src/openJDKtests/lang/Class/getField/Exceptions.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Class/getField/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StringBuffer/Replace.java -->
+		<echo message="Running openJDKtests/lang/StringBuffer/Replace.java on Hotspot"/>
+		<java classname="Replace" output="src/openJDKtests/lang/StringBuffer/Replace.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StringBuffer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StringBuffer/AppendCharSequence.java -->
+		<echo message="Running openJDKtests/lang/StringBuffer/AppendCharSequence.java on Hotspot"/>
+		<java classname="AppendCharSequence" output="src/openJDKtests/lang/StringBuffer/AppendCharSequence.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StringBuffer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StringBuffer/GetCharsSrcEndLarger.java -->
+		<echo message="Running openJDKtests/lang/StringBuffer/GetCharsSrcEndLarger.java on Hotspot"/>
+		<java classname="GetCharsSrcEndLarger" output="src/openJDKtests/lang/StringBuffer/GetCharsSrcEndLarger.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StringBuffer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StringBuffer/Substring.java -->
+		<echo message="Running openJDKtests/lang/StringBuffer/Substring.java on Hotspot"/>
+		<java classname="Substring" output="src/openJDKtests/lang/StringBuffer/Substring.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StringBuffer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StringBuffer/InsertNullString.java -->
+		<echo message="Running openJDKtests/lang/StringBuffer/InsertNullString.java on Hotspot"/>
+		<java classname="InsertNullString" output="src/openJDKtests/lang/StringBuffer/InsertNullString.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StringBuffer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StringBuffer/Exceptions.java -->
+		<echo message="Running openJDKtests/lang/StringBuffer/Exceptions.java on Hotspot"/>
+		<java classname="Exceptions" output="src/openJDKtests/lang/StringBuffer/Exceptions.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StringBuffer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StringBuffer/SetLength.java -->
+		<echo message="Running openJDKtests/lang/StringBuffer/SetLength.java on Hotspot"/>
+		<java classname="SetLength" output="src/openJDKtests/lang/StringBuffer/SetLength.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StringBuffer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StringBuffer/AppendSB.java -->
+		<echo message="Running openJDKtests/lang/StringBuffer/AppendSB.java on Hotspot"/>
+		<java classname="AppendSB" output="src/openJDKtests/lang/StringBuffer/AppendSB.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StringBuffer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StringBuffer/InsertMaxValue.java -->
+		<echo message="Running openJDKtests/lang/StringBuffer/InsertMaxValue.java on Hotspot"/>
+		<java classname="InsertMaxValue" output="src/openJDKtests/lang/StringBuffer/InsertMaxValue.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StringBuffer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StringBuffer/SBBasher.java -->
+		<echo message="Running openJDKtests/lang/StringBuffer/SBBasher.java on Hotspot"/>
+		<java classname="SBBasher" output="src/openJDKtests/lang/StringBuffer/SBBasher.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StringBuffer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StringBuffer/Supplementary.java -->
+		<echo message="Running openJDKtests/lang/StringBuffer/Supplementary.java on Hotspot"/>
+		<java classname="Supplementary" output="src/openJDKtests/lang/StringBuffer/Supplementary.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StringBuffer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StringBuffer/IndexOf.java -->
+		<echo message="Running openJDKtests/lang/StringBuffer/IndexOf.java on Hotspot"/>
+		<java classname="IndexOf" output="src/openJDKtests/lang/StringBuffer/IndexOf.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StringBuffer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StringBuffer/GetCharsOverLength.java -->
+		<echo message="Running openJDKtests/lang/StringBuffer/GetCharsOverLength.java on Hotspot"/>
+		<java classname="GetCharsOverLength" output="src/openJDKtests/lang/StringBuffer/GetCharsOverLength.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StringBuffer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StringBuffer/Trim.java -->
+		<echo message="Running openJDKtests/lang/StringBuffer/Trim.java on Hotspot"/>
+		<java classname="Trim" output="src/openJDKtests/lang/StringBuffer/Trim.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StringBuffer/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Double/Extrema.java -->
+		<echo message="Running openJDKtests/lang/Double/Extrema.java on Hotspot"/>
+		<java classname="Extrema" output="src/openJDKtests/lang/Double/Extrema.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Double/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Double/Constants.java -->
+		<echo message="Running openJDKtests/lang/Double/Constants.java on Hotspot"/>
+		<java classname="Constants" output="src/openJDKtests/lang/Double/Constants.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Double/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Double/NaNInfinityParsing.java -->
+		<echo message="Running openJDKtests/lang/Double/NaNInfinityParsing.java on Hotspot"/>
+		<java classname="NaNInfinityParsing" output="src/openJDKtests/lang/Double/NaNInfinityParsing.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Double/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/String/NonCharacterMapping.java -->
+		<echo message="Running openJDKtests/lang/String/NonCharacterMapping.java on Hotspot"/>
+		<java classname="NonCharacterMapping" output="src/openJDKtests/lang/String/NonCharacterMapping.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/String/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/String/CaseConvertSameInstance.java -->
+		<echo message="Running openJDKtests/lang/String/CaseConvertSameInstance.java on Hotspot"/>
+		<java classname="CaseConvertSameInstance" output="src/openJDKtests/lang/String/CaseConvertSameInstance.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/String/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/String/SBConstructor.java -->
+		<echo message="Running openJDKtests/lang/String/SBConstructor.java on Hotspot"/>
+		<java classname="SBConstructor" output="src/openJDKtests/lang/String/SBConstructor.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/String/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/String/ICCBasher.java -->
+		<echo message="Running openJDKtests/lang/String/ICCBasher.java on Hotspot"/>
+		<java classname="ICCBasher" output="src/openJDKtests/lang/String/ICCBasher.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/String/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/String/ToLowerCase.java -->
+		<echo message="Running openJDKtests/lang/String/ToLowerCase.java on Hotspot"/>
+		<java classname="ToLowerCase" output="src/openJDKtests/lang/String/ToLowerCase.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/String/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/String/IsEmpty.java -->
+		<echo message="Running openJDKtests/lang/String/IsEmpty.java on Hotspot"/>
+		<java classname="IsEmpty" output="src/openJDKtests/lang/String/IsEmpty.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/String/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/String/ToUpperCase.java -->
+		<echo message="Running openJDKtests/lang/String/ToUpperCase.java on Hotspot"/>
+		<java classname="ToUpperCase" output="src/openJDKtests/lang/String/ToUpperCase.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/String/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/String/Regex.java -->
+		<echo message="Running openJDKtests/lang/String/Regex.java on Hotspot"/>
+		<java classname="Regex" output="src/openJDKtests/lang/String/Regex.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/String/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/String/Encodings.java -->
+		<echo message="Running openJDKtests/lang/String/Encodings.java on Hotspot"/>
+		<java classname="Encodings" output="src/openJDKtests/lang/String/Encodings.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/String/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/String/Supplementary.java -->
+		<echo message="Running openJDKtests/lang/String/Supplementary.java on Hotspot"/>
+		<java classname="Supplementary" output="src/openJDKtests/lang/String/Supplementary.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/String/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/String/CompareIC.java -->
+		<echo message="Running openJDKtests/lang/String/CompareIC.java on Hotspot"/>
+		<java classname="CompareIC" output="src/openJDKtests/lang/String/CompareIC.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/String/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/String/RegionMatches.java -->
+		<echo message="Running openJDKtests/lang/String/RegionMatches.java on Hotspot"/>
+		<java classname="RegionMatches" output="src/openJDKtests/lang/String/RegionMatches.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/String/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/String/Split.java -->
+		<echo message="Running openJDKtests/lang/String/Split.java on Hotspot"/>
+		<java classname="Split" output="src/openJDKtests/lang/String/Split.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/String/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/String/ContentEquals.java -->
+		<echo message="Running openJDKtests/lang/String/ContentEquals.java on Hotspot"/>
+		<java classname="ContentEquals" output="src/openJDKtests/lang/String/ContentEquals.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/String/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/String/IndexOfEmptyInEmpty.java -->
+		<echo message="Running openJDKtests/lang/String/IndexOfEmptyInEmpty.java on Hotspot"/>
+		<java classname="IndexOfEmptyInEmpty" output="src/openJDKtests/lang/String/IndexOfEmptyInEmpty.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/String/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/ref/NullQueue.java -->
+		<echo message="Running openJDKtests/lang/ref/NullQueue.java on Hotspot"/>
+		<java classname="NullQueue" output="src/openJDKtests/lang/ref/NullQueue.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/ref/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/ref/SoftReference/Bash.java -->
+		<echo message="Running openJDKtests/lang/ref/SoftReference/Bash.java on Hotspot"/>
+		<java classname="Bash" output="src/openJDKtests/lang/ref/SoftReference/Bash.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/ref/SoftReference/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/ref/EnqueueNullRef.java -->
+		<echo message="Running openJDKtests/lang/ref/EnqueueNullRef.java on Hotspot"/>
+		<java classname="EnqueueNullRef" output="src/openJDKtests/lang/ref/EnqueueNullRef.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/ref/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StringBuilder/Insert.java -->
+		<echo message="Running openJDKtests/lang/StringBuilder/Insert.java on Hotspot"/>
+		<java classname="Insert" output="src/openJDKtests/lang/StringBuilder/Insert.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StringBuilder/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StringBuilder/Exceptions.java -->
+		<echo message="Running openJDKtests/lang/StringBuilder/Exceptions.java on Hotspot"/>
+		<java classname="Exceptions" output="src/openJDKtests/lang/StringBuilder/Exceptions.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StringBuilder/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/StringBuilder/Supplementary.java -->
+		<echo message="Running openJDKtests/lang/StringBuilder/Supplementary.java on Hotspot"/>
+		<java classname="Supplementary" output="src/openJDKtests/lang/StringBuilder/Supplementary.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/StringBuilder/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/InheritableThreadLocal/ITLRemoveTest.java -->
+		<echo message="Running openJDKtests/lang/InheritableThreadLocal/ITLRemoveTest.java on Hotspot"/>
+		<java classname="ITLRemoveTest" output="src/openJDKtests/lang/InheritableThreadLocal/ITLRemoveTest.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/InheritableThreadLocal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/InheritableThreadLocal/Basic.java -->
+		<echo message="Running openJDKtests/lang/InheritableThreadLocal/Basic.java on Hotspot"/>
+		<java classname="Basic" output="src/openJDKtests/lang/InheritableThreadLocal/Basic.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/InheritableThreadLocal/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Boolean/ParseBoolean.java -->
+		<echo message="Running openJDKtests/lang/Boolean/ParseBoolean.java on Hotspot"/>
+		<java classname="ParseBoolean" output="src/openJDKtests/lang/Boolean/ParseBoolean.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Boolean/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Boolean/Factory.java -->
+		<echo message="Running openJDKtests/lang/Boolean/Factory.java on Hotspot"/>
+		<java classname="Factory" output="src/openJDKtests/lang/Boolean/Factory.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Boolean/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Boolean/MakeBooleanComparable.java -->
+		<echo message="Running openJDKtests/lang/Boolean/MakeBooleanComparable.java on Hotspot"/>
+		<java classname="MakeBooleanComparable" output="src/openJDKtests/lang/Boolean/MakeBooleanComparable.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Boolean/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Boolean/GetBoolean.java -->
+		<echo message="Running openJDKtests/lang/Boolean/GetBoolean.java on Hotspot"/>
+		<java classname="GetBoolean" output="src/openJDKtests/lang/Boolean/GetBoolean.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Boolean/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/ThreadGroup/SetMaxPriority.java -->
+		<echo message="Running openJDKtests/lang/ThreadGroup/SetMaxPriority.java on Hotspot"/>
+		<java classname="SetMaxPriority" output="src/openJDKtests/lang/ThreadGroup/SetMaxPriority.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/ThreadGroup/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/ThreadGroup/Stop.java -->
+		<echo message="Running openJDKtests/lang/ThreadGroup/Stop.java on Hotspot"/>
+		<java classname="Stop" output="src/openJDKtests/lang/ThreadGroup/Stop.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/ThreadGroup/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/ThreadGroup/Daemon.java -->
+		<echo message="Running openJDKtests/lang/ThreadGroup/Daemon.java on Hotspot"/>
+		<java classname="Daemon" output="src/openJDKtests/lang/ThreadGroup/Daemon.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/ThreadGroup/" />
+			</classpath>
+		</java>
+
+		<!-- openJDKtests/lang/Appendable/Basic.java -->
+		<echo message="Running openJDKtests/lang/Appendable/Basic.java on Hotspot"/>
+		<java classname="Basic" output="src/openJDKtests/lang/Appendable/Basic.expected" fork="true">
+				<classpath>
+				<pathelement location="${build.classes}/openJDKtests/lang/Appendable/" />
+			</classpath>
+		</java>
+
+		<!-- Comparison -->
+		<startResults/>
+			<runCompareTest tag="Constructors" class="Constructors" expecteddir="${main.java}/openJDKtests/util/IllegalFormatException" classpath="${build.classes}/openJDKtests/util/IllegalFormatException"/>
+			<runCompareTest tag="Basic" class="Basic" expecteddir="${main.java}/openJDKtests/util/LinkedHashMap" classpath="${build.classes}/openJDKtests/util/LinkedHashMap"/>
+			<runCompareTest tag="Cache" class="Cache" expecteddir="${main.java}/openJDKtests/util/LinkedHashMap" classpath="${build.classes}/openJDKtests/util/LinkedHashMap"/>
+			<runCompareTest tag="EmptyMapIterator" class="EmptyMapIterator" expecteddir="${main.java}/openJDKtests/util/LinkedHashMap" classpath="${build.classes}/openJDKtests/util/LinkedHashMap"/>
+			<runCompareTest tag="Bug4512215" class="Bug4512215" expecteddir="${main.java}/openJDKtests/util/Currency" classpath="${build.classes}/openJDKtests/util/Currency"/>
+			<runCompareTest tag="IteratorAtEnd" class="IteratorAtEnd" expecteddir="${main.java}/openJDKtests/util/Collection" classpath="${build.classes}/openJDKtests/util/Collection"/>
+			<runCompareTest tag="BiggernYours" class="BiggernYours" expecteddir="${main.java}/openJDKtests/util/Collection" classpath="${build.classes}/openJDKtests/util/Collection"/>
+			<runCompareTest tag="RemoveContains" class="RemoveContains" expecteddir="${main.java}/openJDKtests/util/PriorityQueue" classpath="${build.classes}/openJDKtests/util/PriorityQueue"/>
+			<runCompareTest tag="ForgetMeNot" class="ForgetMeNot" expecteddir="${main.java}/openJDKtests/util/PriorityQueue" classpath="${build.classes}/openJDKtests/util/PriorityQueue"/>
+			<runCompareTest tag="PriorityQueueSort" class="PriorityQueueSort" expecteddir="${main.java}/openJDKtests/util/PriorityQueue" classpath="${build.classes}/openJDKtests/util/PriorityQueue"/>
+			<runCompareTest tag="Basic" class="Basic" expecteddir="${main.java}/openJDKtests/util/LinkedHashSet" classpath="${build.classes}/openJDKtests/util/LinkedHashSet"/>
+			<runCompareTest tag="ListTimeZones" class="ListTimeZones" expecteddir="${main.java}/openJDKtests/util/TimeZone" classpath="${build.classes}/openJDKtests/util/TimeZone"/>
+			<runCompareTest tag="AddAll" class="AddAll" expecteddir="${main.java}/openJDKtests/util/ArrayList" classpath="${build.classes}/openJDKtests/util/ArrayList"/>
+			<runCompareTest tag="Bug6533203" class="Bug6533203" expecteddir="${main.java}/openJDKtests/util/ArrayList" classpath="${build.classes}/openJDKtests/util/ArrayList"/>
+			<runCompareTest tag="ToString" class="ToString" expecteddir="${main.java}/openJDKtests/util/AbstractCollection" classpath="${build.classes}/openJDKtests/util/AbstractCollection"/>
+			<runCompareTest tag="ReadObject" class="ReadObject" expecteddir="${main.java}/openJDKtests/util/Hashtable" classpath="${build.classes}/openJDKtests/util/Hashtable"/>
+			<runCompareTest tag="EqualsCast" class="EqualsCast" expecteddir="${main.java}/openJDKtests/util/Hashtable" classpath="${build.classes}/openJDKtests/util/Hashtable"/>
+			<runCompareTest tag="HashCode" class="HashCode" expecteddir="${main.java}/openJDKtests/util/Hashtable" classpath="${build.classes}/openJDKtests/util/Hashtable"/>
+			<runCompareTest tag="IllegalLoadFactor" class="IllegalLoadFactor" expecteddir="${main.java}/openJDKtests/util/Hashtable" classpath="${build.classes}/openJDKtests/util/Hashtable"/>
+			<runCompareTest tag="ClearChanged" class="ClearChanged" expecteddir="${main.java}/openJDKtests/util/Observable" classpath="${build.classes}/openJDKtests/util/Observable"/>
+			<runCompareTest tag="ReverseOrder" class="ReverseOrder" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="NullComparator" class="NullComparator" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="CheckedSetBash" class="CheckedSetBash" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="T6433170" class="T6433170" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="CheckedMapBash" class="CheckedMapBash" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="Swap" class="Swap" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="BigBinarySearch" class="BigBinarySearch" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="BinarySearchNullComparator" class="BinarySearchNullComparator" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="AsLifoQueue" class="AsLifoQueue" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="Ser" class="Ser" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="ReverseOrder2" class="ReverseOrder2" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="WrappedNull" class="WrappedNull" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="FindSubList" class="FindSubList" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="RotateEmpty" class="RotateEmpty" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="CheckedNull" class="CheckedNull" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="ViewSynch" class="ViewSynch" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="AddAll" class="AddAll" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="CheckedListBash" class="CheckedListBash" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="NCopies" class="NCopies" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="MinMax" class="MinMax" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="ReplaceAll" class="ReplaceAll" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="Rotate" class="Rotate" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="Enum" class="Enum" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="Disjoint" class="Disjoint" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="Frequency" class="Frequency" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="SetFromMap" class="SetFromMap" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="EmptyCollectionSerialization" class="EmptyCollectionSerialization" expecteddir="${main.java}/openJDKtests/util/Collections" classpath="${build.classes}/openJDKtests/util/Collections"/>
+			<runCompareTest tag="SimpleEntries" class="SimpleEntries" expecteddir="${main.java}/openJDKtests/util/AbstractMap" classpath="${build.classes}/openJDKtests/util/AbstractMap"/>
+			<runCompareTest tag="AbstractMapClone" class="AbstractMapClone" expecteddir="${main.java}/openJDKtests/util/AbstractMap" classpath="${build.classes}/openJDKtests/util/AbstractMap"/>
+			<runCompareTest tag="Equals" class="Equals" expecteddir="${main.java}/openJDKtests/util/AbstractMap" classpath="${build.classes}/openJDKtests/util/AbstractMap"/>
+			<runCompareTest tag="ToString" class="ToString" expecteddir="${main.java}/openJDKtests/util/AbstractMap" classpath="${build.classes}/openJDKtests/util/AbstractMap"/>
+			<runCompareTest tag="ArrayObjectMethods" class="ArrayObjectMethods" expecteddir="${main.java}/openJDKtests/util/Arrays" classpath="${build.classes}/openJDKtests/util/Arrays"/>
+			<runCompareTest tag="Big" class="Big" expecteddir="${main.java}/openJDKtests/util/Arrays" classpath="${build.classes}/openJDKtests/util/Arrays"/>
+			<runCompareTest tag="Correct" class="Correct" expecteddir="${main.java}/openJDKtests/util/Arrays" classpath="${build.classes}/openJDKtests/util/Arrays"/>
+			<runCompareTest tag="Fill" class="Fill" expecteddir="${main.java}/openJDKtests/util/Arrays" classpath="${build.classes}/openJDKtests/util/Arrays"/>
+			<runCompareTest tag="CopyMethods" class="CopyMethods" expecteddir="${main.java}/openJDKtests/util/Arrays" classpath="${build.classes}/openJDKtests/util/Arrays"/>
+			<runCompareTest tag="ZeroInitCap" class="ZeroInitCap" expecteddir="${main.java}/openJDKtests/util/WeakHashMap" classpath="${build.classes}/openJDKtests/util/WeakHashMap"/>
+			<runCompareTest tag="Iteration" class="Iteration" expecteddir="${main.java}/openJDKtests/util/WeakHashMap" classpath="${build.classes}/openJDKtests/util/WeakHashMap"/>
+			<runCompareTest tag="StockName" class="StockName" expecteddir="${main.java}/openJDKtests/util/Formattable" classpath="${build.classes}/openJDKtests/util/Formattable"/>
+			<runCompareTest tag="ToArray" class="ToArray" expecteddir="${main.java}/openJDKtests/util/EnumMap" classpath="${build.classes}/openJDKtests/util/EnumMap"/>
+			<runCompareTest tag="EnumMapBash" class="EnumMapBash" expecteddir="${main.java}/openJDKtests/util/EnumMap" classpath="${build.classes}/openJDKtests/util/EnumMap"/>
+			<runCompareTest tag="ToArray" class="ToArray" expecteddir="${main.java}/openJDKtests/util/IdentityHashMap" classpath="${build.classes}/openJDKtests/util/IdentityHashMap"/>
+			<runCompareTest tag="ResetPos" class="ResetPos" expecteddir="${main.java}/openJDKtests/util/StringTokenizer" classpath="${build.classes}/openJDKtests/util/StringTokenizer"/>
+			<runCompareTest tag="FormFeed" class="FormFeed" expecteddir="${main.java}/openJDKtests/util/StringTokenizer" classpath="${build.classes}/openJDKtests/util/StringTokenizer"/>
+			<runCompareTest tag="Supplementary" class="Supplementary" expecteddir="${main.java}/openJDKtests/util/StringTokenizer" classpath="${build.classes}/openJDKtests/util/StringTokenizer"/>
+			<runCompareTest tag="ChorusLine" class="ChorusLine" expecteddir="${main.java}/openJDKtests/util/Deque" classpath="${build.classes}/openJDKtests/util/Deque"/>
+			<runCompareTest tag="SubMapClear" class="SubMapClear" expecteddir="${main.java}/openJDKtests/util/TreeMap" classpath="${build.classes}/openJDKtests/util/TreeMap"/>
+			<runCompareTest tag="SubMap" class="SubMap" expecteddir="${main.java}/openJDKtests/util/TreeMap" classpath="${build.classes}/openJDKtests/util/TreeMap"/>
+			<runCompareTest tag="NullAtEnd" class="NullAtEnd" expecteddir="${main.java}/openJDKtests/util/TreeMap" classpath="${build.classes}/openJDKtests/util/TreeMap"/>
+			<runCompareTest tag="HeadTailTypeError" class="HeadTailTypeError" expecteddir="${main.java}/openJDKtests/util/TreeMap" classpath="${build.classes}/openJDKtests/util/TreeMap"/>
+			<runCompareTest tag="ContainsValue" class="ContainsValue" expecteddir="${main.java}/openJDKtests/util/TreeMap" classpath="${build.classes}/openJDKtests/util/TreeMap"/>
+			<runCompareTest tag="JumboRange" class="JumboRange" expecteddir="${main.java}/openJDKtests/util/EnumSet" classpath="${build.classes}/openJDKtests/util/EnumSet"/>
+			<runCompareTest tag="EnumSetBash" class="EnumSetBash" expecteddir="${main.java}/openJDKtests/util/EnumSet" classpath="${build.classes}/openJDKtests/util/EnumSet"/>
+			<runCompareTest tag="AllOf" class="AllOf" expecteddir="${main.java}/openJDKtests/util/EnumSet" classpath="${build.classes}/openJDKtests/util/EnumSet"/>
+			<runCompareTest tag="InsertWrongType" class="InsertWrongType" expecteddir="${main.java}/openJDKtests/util/EnumSet" classpath="${build.classes}/openJDKtests/util/EnumSet"/>
+			<runCompareTest tag="RetainAll" class="RetainAll" expecteddir="${main.java}/openJDKtests/util/EnumSet" classpath="${build.classes}/openJDKtests/util/EnumSet"/>
+			<runCompareTest tag="Range" class="Range" expecteddir="${main.java}/openJDKtests/util/EnumSet" classpath="${build.classes}/openJDKtests/util/EnumSet"/>
+			<runCompareTest tag="ComplementOf" class="ComplementOf" expecteddir="${main.java}/openJDKtests/util/EnumSet" classpath="${build.classes}/openJDKtests/util/EnumSet"/>
+			<runCompareTest tag="BogusEnumSet" class="BogusEnumSet" expecteddir="${main.java}/openJDKtests/util/EnumSet" classpath="${build.classes}/openJDKtests/util/EnumSet"/>
+			<runCompareTest tag="EndOfDay" class="EndOfDay" expecteddir="${main.java}/openJDKtests/util/SimpleTimeZone" classpath="${build.classes}/openJDKtests/util/SimpleTimeZone"/>
+			<runCompareTest tag="StickySize" class="StickySize" expecteddir="${main.java}/openJDKtests/util/BitSet" classpath="${build.classes}/openJDKtests/util/BitSet"/>
+			<runCompareTest tag="And" class="And" expecteddir="${main.java}/openJDKtests/util/BitSet" classpath="${build.classes}/openJDKtests/util/BitSet"/>
+			<runCompareTest tag="MemoryLeak" class="MemoryLeak" expecteddir="${main.java}/openJDKtests/util/BitSet" classpath="${build.classes}/openJDKtests/util/BitSet"/>
+			<runCompareTest tag="BSMethods" class="BSMethods" expecteddir="${main.java}/openJDKtests/util/BitSet" classpath="${build.classes}/openJDKtests/util/BitSet"/>
+			<runCompareTest tag="AddAll" class="AddAll" expecteddir="${main.java}/openJDKtests/util/AbstractSequentialList" classpath="${build.classes}/openJDKtests/util/AbstractSequentialList"/>
+			<runCompareTest tag="SetValue" class="SetValue" expecteddir="${main.java}/openJDKtests/util/HashMap" classpath="${build.classes}/openJDKtests/util/HashMap"/>
+			<runCompareTest tag="KeySetRemove" class="KeySetRemove" expecteddir="${main.java}/openJDKtests/util/HashMap" classpath="${build.classes}/openJDKtests/util/HashMap"/>
+			<runCompareTest tag="Get" class="Get" expecteddir="${main.java}/openJDKtests/util/Map" classpath="${build.classes}/openJDKtests/util/Map"/>
+			<runCompareTest tag="NextBytes" class="NextBytes" expecteddir="${main.java}/openJDKtests/util/Random" classpath="${build.classes}/openJDKtests/util/Random"/>
+			<runCompareTest tag="NextIntPowerOfTwoMod" class="NextIntPowerOfTwoMod" expecteddir="${main.java}/openJDKtests/util/Random" classpath="${build.classes}/openJDKtests/util/Random"/>
+			<runCompareTest tag="DistinctSeeds" class="DistinctSeeds" expecteddir="${main.java}/openJDKtests/util/Random" classpath="${build.classes}/openJDKtests/util/Random"/>
+			<runCompareTest tag="UUIDTest" class="UUIDTest" expecteddir="${main.java}/openJDKtests/util/UUID" classpath="${build.classes}/openJDKtests/util/UUID"/>
+			<runCompareTest tag="Serial" class="Serial" expecteddir="${main.java}/openJDKtests/util/UUID" classpath="${build.classes}/openJDKtests/util/UUID"/>
+			<runCompareTest tag="Remove" class="Remove" expecteddir="${main.java}/openJDKtests/util/LinkedList" classpath="${build.classes}/openJDKtests/util/LinkedList"/>
+			<runCompareTest tag="AddAll" class="AddAll" expecteddir="${main.java}/openJDKtests/util/LinkedList" classpath="${build.classes}/openJDKtests/util/LinkedList"/>
+			<runCompareTest tag="Clone" class="Clone" expecteddir="${main.java}/openJDKtests/util/LinkedList" classpath="${build.classes}/openJDKtests/util/LinkedList"/>
+			<runCompareTest tag="ComodifiedRemove" class="ComodifiedRemove" expecteddir="${main.java}/openJDKtests/util/LinkedList" classpath="${build.classes}/openJDKtests/util/LinkedList"/>
+			<runCompareTest tag="HasNextAfterException" class="HasNextAfterException" expecteddir="${main.java}/openJDKtests/util/AbstractList" classpath="${build.classes}/openJDKtests/util/AbstractList"/>
+			<runCompareTest tag="FailFastIterator" class="FailFastIterator" expecteddir="${main.java}/openJDKtests/util/AbstractList" classpath="${build.classes}/openJDKtests/util/AbstractList"/>
+			<runCompareTest tag="CopyInto" class="CopyInto" expecteddir="${main.java}/openJDKtests/util/Vector" classpath="${build.classes}/openJDKtests/util/Vector"/>
+			<runCompareTest tag="IllegalConstructorArgs" class="IllegalConstructorArgs" expecteddir="${main.java}/openJDKtests/util/Vector" classpath="${build.classes}/openJDKtests/util/Vector"/>
+			<runCompareTest tag="SyncLastIndexOf" class="SyncLastIndexOf" expecteddir="${main.java}/openJDKtests/util/Vector" classpath="${build.classes}/openJDKtests/util/Vector"/>
+			<runCompareTest tag="ComodifiedRemoveAllElements" class="ComodifiedRemoveAllElements" expecteddir="${main.java}/openJDKtests/util/Vector" classpath="${build.classes}/openJDKtests/util/Vector"/>
+			<runCompareTest tag="LastIndexOf" class="LastIndexOf" expecteddir="${main.java}/openJDKtests/util/Vector" classpath="${build.classes}/openJDKtests/util/Vector"/>
+			<runCompareTest tag="RoundingModeTests" class="RoundingModeTests" expecteddir="${main.java}/openJDKtests/math/RoundingMode" classpath="${build.classes}/openJDKtests/math/RoundingMode"/>
+			<runCompareTest tag="NegateTests" class="NegateTests" expecteddir="${main.java}/openJDKtests/math/BigDecimal" classpath="${build.classes}/openJDKtests/math/BigDecimal"/>
+			<runCompareTest tag="StrippingZerosTest" class="StrippingZerosTest" expecteddir="${main.java}/openJDKtests/math/BigDecimal" classpath="${build.classes}/openJDKtests/math/BigDecimal"/>
+			<runCompareTest tag="DivideTests" class="DivideTests" expecteddir="${main.java}/openJDKtests/math/BigDecimal" classpath="${build.classes}/openJDKtests/math/BigDecimal"/>
+			<runCompareTest tag="ZeroScalingTests" class="ZeroScalingTests" expecteddir="${main.java}/openJDKtests/math/BigDecimal" classpath="${build.classes}/openJDKtests/math/BigDecimal"/>
+			<runCompareTest tag="AddTests" class="AddTests" expecteddir="${main.java}/openJDKtests/math/BigDecimal" classpath="${build.classes}/openJDKtests/math/BigDecimal"/>
+			<runCompareTest tag="RoundingTests" class="RoundingTests" expecteddir="${main.java}/openJDKtests/math/BigDecimal" classpath="${build.classes}/openJDKtests/math/BigDecimal"/>
+			<runCompareTest tag="IntegralDivisionTests" class="IntegralDivisionTests" expecteddir="${main.java}/openJDKtests/math/BigDecimal" classpath="${build.classes}/openJDKtests/math/BigDecimal"/>
+			<runCompareTest tag="CompareToTests" class="CompareToTests" expecteddir="${main.java}/openJDKtests/math/BigDecimal" classpath="${build.classes}/openJDKtests/math/BigDecimal"/>
+			<runCompareTest tag="MultiplyTests" class="MultiplyTests" expecteddir="${main.java}/openJDKtests/math/BigDecimal" classpath="${build.classes}/openJDKtests/math/BigDecimal"/>
+			<runCompareTest tag="Constructor" class="Constructor" expecteddir="${main.java}/openJDKtests/math/BigDecimal" classpath="${build.classes}/openJDKtests/math/BigDecimal"/>
+			<runCompareTest tag="ScaleByPowerOfTenTests" class="ScaleByPowerOfTenTests" expecteddir="${main.java}/openJDKtests/math/BigDecimal" classpath="${build.classes}/openJDKtests/math/BigDecimal"/>
+			<runCompareTest tag="SerializationTests" class="SerializationTests" expecteddir="${main.java}/openJDKtests/math/BigDecimal" classpath="${build.classes}/openJDKtests/math/BigDecimal"/>
+			<runCompareTest tag="PowTests" class="PowTests" expecteddir="${main.java}/openJDKtests/math/BigDecimal" classpath="${build.classes}/openJDKtests/math/BigDecimal"/>
+			<runCompareTest tag="FloatDoubleValueTests" class="FloatDoubleValueTests" expecteddir="${main.java}/openJDKtests/math/BigDecimal" classpath="${build.classes}/openJDKtests/math/BigDecimal"/>
+			<runCompareTest tag="ToPlainStringTests" class="ToPlainStringTests" expecteddir="${main.java}/openJDKtests/math/BigDecimal" classpath="${build.classes}/openJDKtests/math/BigDecimal"/>
+			<runCompareTest tag="ProbablePrime" class="ProbablePrime" expecteddir="${main.java}/openJDKtests/math/BigInteger" classpath="${build.classes}/openJDKtests/math/BigInteger"/>
+			<runCompareTest tag="ModPow" class="ModPow" expecteddir="${main.java}/openJDKtests/math/BigInteger" classpath="${build.classes}/openJDKtests/math/BigInteger"/>
+			<runCompareTest tag="OperatorNpeTests" class="OperatorNpeTests" expecteddir="${main.java}/openJDKtests/math/BigInteger" classpath="${build.classes}/openJDKtests/math/BigInteger"/>
+			<runCompareTest tag="BigIntegerTest" class="BigIntegerTest" expecteddir="${main.java}/openJDKtests/math/BigInteger" classpath="${build.classes}/openJDKtests/math/BigInteger"/>
+			<runCompareTest tag="UnicodeConstructor" class="UnicodeConstructor" expecteddir="${main.java}/openJDKtests/math/BigInteger" classpath="${build.classes}/openJDKtests/math/BigInteger"/>
+			<runCompareTest tag="StackTraceSerialization" class="StackTraceSerialization" expecteddir="${main.java}/openJDKtests/lang/Throwable" classpath="${build.classes}/openJDKtests/lang/Throwable"/>
+			<runCompareTest tag="LocalizedMessage" class="LocalizedMessage" expecteddir="${main.java}/openJDKtests/lang/Throwable" classpath="${build.classes}/openJDKtests/lang/Throwable"/>
+			<runCompareTest tag="LegacyChainedExceptionSerialization" class="LegacyChainedExceptionSerialization" expecteddir="${main.java}/openJDKtests/lang/Throwable" classpath="${build.classes}/openJDKtests/lang/Throwable"/>
+			<runCompareTest tag="ChainedExceptions" class="ChainedExceptions" expecteddir="${main.java}/openJDKtests/lang/Throwable" classpath="${build.classes}/openJDKtests/lang/Throwable"/>
+			<runCompareTest tag="NewChainedExceptions" class="NewChainedExceptions" expecteddir="${main.java}/openJDKtests/lang/Throwable" classpath="${build.classes}/openJDKtests/lang/Throwable"/>
+			<runCompareTest tag="ParseFloat" class="ParseFloat" expecteddir="${main.java}/openJDKtests/lang/Float" classpath="${build.classes}/openJDKtests/lang/Float"/>
+			<runCompareTest tag="Extrema" class="Extrema" expecteddir="${main.java}/openJDKtests/lang/Float" classpath="${build.classes}/openJDKtests/lang/Float"/>
+			<runCompareTest tag="Constants" class="Constants" expecteddir="${main.java}/openJDKtests/lang/Float" classpath="${build.classes}/openJDKtests/lang/Float"/>
+			<runCompareTest tag="NaNInfinityParsing" class="NaNInfinityParsing" expecteddir="${main.java}/openJDKtests/lang/Float" classpath="${build.classes}/openJDKtests/lang/Float"/>
+			<runCompareTest tag="TestThreadId" class="TestThreadId" expecteddir="${main.java}/openJDKtests/lang/ThreadLocal" classpath="${build.classes}/openJDKtests/lang/ThreadLocal"/>
+			<runCompareTest tag="MemoryLeak" class="MemoryLeak" expecteddir="${main.java}/openJDKtests/lang/ThreadLocal" classpath="${build.classes}/openJDKtests/lang/ThreadLocal"/>
+			<runCompareTest tag="Basic" class="Basic" expecteddir="${main.java}/openJDKtests/lang/ThreadLocal" classpath="${build.classes}/openJDKtests/lang/ThreadLocal"/>
+			<runCompareTest tag="InitialValue" class="InitialValue" expecteddir="${main.java}/openJDKtests/lang/ThreadLocal" classpath="${build.classes}/openJDKtests/lang/ThreadLocal"/>
+			<runCompareTest tag="ThreadId" class="ThreadId" expecteddir="${main.java}/openJDKtests/lang/ThreadLocal" classpath="${build.classes}/openJDKtests/lang/ThreadLocal"/>
+			<runCompareTest tag="TLRemoveTest" class="TLRemoveTest" expecteddir="${main.java}/openJDKtests/lang/ThreadLocal" classpath="${build.classes}/openJDKtests/lang/ThreadLocal"/>
+			<runCompareTest tag="BitTwiddle" class="BitTwiddle" expecteddir="${main.java}/openJDKtests/lang/Integer" classpath="${build.classes}/openJDKtests/lang/Integer"/>
+			<runCompareTest tag="ParsingTest" class="ParsingTest" expecteddir="${main.java}/openJDKtests/lang/Integer" classpath="${build.classes}/openJDKtests/lang/Integer"/>
+			<runCompareTest tag="GetInteger" class="GetInteger" expecteddir="${main.java}/openJDKtests/lang/Integer" classpath="${build.classes}/openJDKtests/lang/Integer"/>
+			<runCompareTest tag="Decode" class="Decode" expecteddir="${main.java}/openJDKtests/lang/Integer" classpath="${build.classes}/openJDKtests/lang/Integer"/>
+			<runCompareTest tag="ByteSwap" class="ByteSwap" expecteddir="${main.java}/openJDKtests/lang/Short" classpath="${build.classes}/openJDKtests/lang/Short"/>
+			<runCompareTest tag="Decode" class="Decode" expecteddir="${main.java}/openJDKtests/lang/Short" classpath="${build.classes}/openJDKtests/lang/Short"/>
+			<runCompareTest tag="GetLong" class="GetLong" expecteddir="${main.java}/openJDKtests/lang/Long" classpath="${build.classes}/openJDKtests/lang/Long"/>
+			<runCompareTest tag="BitTwiddle" class="BitTwiddle" expecteddir="${main.java}/openJDKtests/lang/Long" classpath="${build.classes}/openJDKtests/lang/Long"/>
+			<runCompareTest tag="ParsingTest" class="ParsingTest" expecteddir="${main.java}/openJDKtests/lang/Long" classpath="${build.classes}/openJDKtests/lang/Long"/>
+			<runCompareTest tag="Decode" class="Decode" expecteddir="${main.java}/openJDKtests/lang/Long" classpath="${build.classes}/openJDKtests/lang/Long"/>
+			<runCompareTest tag="Expm1Tests" class="Expm1Tests" expecteddir="${main.java}/openJDKtests/lang/StrictMath" classpath="${build.classes}/openJDKtests/lang/StrictMath"/>
+			<runCompareTest tag="Tests" class="Tests" expecteddir="${main.java}/openJDKtests/lang/StrictMath" classpath="${build.classes}/openJDKtests/lang/StrictMath"/>
+			<runCompareTest tag="CubeRootTests" class="CubeRootTests" expecteddir="${main.java}/openJDKtests/lang/StrictMath" classpath="${build.classes}/openJDKtests/lang/StrictMath"/>
+			<runCompareTest tag="Log10Tests" class="Log10Tests" expecteddir="${main.java}/openJDKtests/lang/StrictMath" classpath="${build.classes}/openJDKtests/lang/StrictMath"/>
+			<runCompareTest tag="Log1pTests" class="Log1pTests" expecteddir="${main.java}/openJDKtests/lang/StrictMath" classpath="${build.classes}/openJDKtests/lang/StrictMath"/>
+			<runCompareTest tag="HyperbolicTests" class="HyperbolicTests" expecteddir="${main.java}/openJDKtests/lang/StrictMath" classpath="${build.classes}/openJDKtests/lang/StrictMath"/>
+			<runCompareTest tag="HypotTests" class="HypotTests" expecteddir="${main.java}/openJDKtests/lang/StrictMath" classpath="${build.classes}/openJDKtests/lang/StrictMath"/>
+			<runCompareTest tag="TestParameterAnnotations" class="TestParameterAnnotations" expecteddir="${main.java}/openJDKtests/lang/reflect/Constructor" classpath="${build.classes}/openJDKtests/lang/reflect/Constructor"/>
+			<runCompareTest tag="Boxing" class="Boxing" expecteddir="${main.java}/openJDKtests/lang/reflect/Proxy" classpath="${build.classes}/openJDKtests/lang/reflect/Proxy"/>
+			<runCompareTest tag="Test" class="Test" expecteddir="${main.java}/openJDKtests/lang/reflect/Proxy/returnTypes" classpath="${build.classes}/openJDKtests/lang/reflect/Proxy/returnTypes"/>
+			<runCompareTest tag="ClassRestrictions" class="ClassRestrictions" expecteddir="${main.java}/openJDKtests/lang/reflect/Proxy" classpath="${build.classes}/openJDKtests/lang/reflect/Proxy"/>
+			<runCompareTest tag="CharType" class="CharType" expecteddir="${main.java}/openJDKtests/lang/reflect/Proxy" classpath="${build.classes}/openJDKtests/lang/reflect/Proxy"/>
+			<runCompareTest tag="toStringTest" class="toStringTest" expecteddir="${main.java}/openJDKtests/lang/reflect/Modifier" classpath="${build.classes}/openJDKtests/lang/reflect/Modifier"/>
+			<runCompareTest tag="ExceedMaxDim" class="ExceedMaxDim" expecteddir="${main.java}/openJDKtests/lang/reflect/Array" classpath="${build.classes}/openJDKtests/lang/reflect/Array"/>
+			<runCompareTest tag="Set" class="Set" expecteddir="${main.java}/openJDKtests/lang/reflect/Field" classpath="${build.classes}/openJDKtests/lang/reflect/Field"/>
+			<runCompareTest tag="StaticFieldTest" class="StaticFieldTest" expecteddir="${main.java}/openJDKtests/lang/reflect/Field/eightsixfour" classpath="${build.classes}/openJDKtests/lang/reflect/Field/eightsixfour"/>
+			<runCompareTest tag="ArrayAssignment" class="ArrayAssignment" expecteddir="${main.java}/openJDKtests/lang/reflect/Assignment" classpath="${build.classes}/openJDKtests/lang/reflect/Assignment"/>
+			<runCompareTest tag="TestParameterizedType" class="TestParameterizedType" expecteddir="${main.java}/openJDKtests/lang/reflect/Generics" classpath="${build.classes}/openJDKtests/lang/reflect/Generics"/>
+			<runCompareTest tag="StringsAndBounds" class="StringsAndBounds" expecteddir="${main.java}/openJDKtests/lang/reflect/Generics" classpath="${build.classes}/openJDKtests/lang/reflect/Generics"/>
+			<runCompareTest tag="TestC2" class="TestC2" expecteddir="${main.java}/openJDKtests/lang/reflect/Generics" classpath="${build.classes}/openJDKtests/lang/reflect/Generics"/>
+			<runCompareTest tag="getAnnotationTest" class="getAnnotationTest" expecteddir="${main.java}/openJDKtests/lang/reflect/Generics" classpath="${build.classes}/openJDKtests/lang/reflect/Generics"/>
+			<runCompareTest tag="Probe" class="Probe" expecteddir="${main.java}/openJDKtests/lang/reflect/Generics" classpath="${build.classes}/openJDKtests/lang/reflect/Generics"/>
+			<runCompareTest tag="TestN1" class="TestN1" expecteddir="${main.java}/openJDKtests/lang/reflect/Generics" classpath="${build.classes}/openJDKtests/lang/reflect/Generics"/>
+			<runCompareTest tag="exceptionCauseTest" class="exceptionCauseTest" expecteddir="${main.java}/openJDKtests/lang/reflect/Generics" classpath="${build.classes}/openJDKtests/lang/reflect/Generics"/>
+			<runCompareTest tag="TestC1" class="TestC1" expecteddir="${main.java}/openJDKtests/lang/reflect/Generics" classpath="${build.classes}/openJDKtests/lang/reflect/Generics"/>
+			<runCompareTest tag="IllegalAccessInInvoke" class="IllegalAccessInInvoke" expecteddir="${main.java}/openJDKtests/lang/reflect/Method/invoke" classpath="${build.classes}/openJDKtests/lang/reflect/Method/invoke"/>
+			<runCompareTest tag="ErrorInInvoke" class="ErrorInInvoke" expecteddir="${main.java}/openJDKtests/lang/reflect/Method/invoke" classpath="${build.classes}/openJDKtests/lang/reflect/Method/invoke"/>
+			<runCompareTest tag="InheritedInterfaceMethods" class="InheritedInterfaceMethods" expecteddir="${main.java}/openJDKtests/lang/reflect/Method" classpath="${build.classes}/openJDKtests/lang/reflect/Method"/>
+			<runCompareTest tag="Decode" class="Decode" expecteddir="${main.java}/openJDKtests/lang/Byte" classpath="${build.classes}/openJDKtests/lang/Byte"/>
+			<runCompareTest tag="PublicConstructor" class="PublicConstructor" expecteddir="${main.java}/openJDKtests/lang/StackTraceElement" classpath="${build.classes}/openJDKtests/lang/StackTraceElement"/>
+			<runCompareTest tag="Cause" class="Cause" expecteddir="${main.java}/openJDKtests/lang/AssertionError" classpath="${build.classes}/openJDKtests/lang/AssertionError"/>
+			<runCompareTest tag="Sanity" class="Sanity" expecteddir="${main.java}/openJDKtests/lang/Class/getClasses" classpath="${build.classes}/openJDKtests/lang/Class/getClasses"/>
+			<runCompareTest tag="Cast" class="Cast" expecteddir="${main.java}/openJDKtests/lang/Class" classpath="${build.classes}/openJDKtests/lang/Class"/>
+			<runCompareTest tag="EnclosingConstructorTests" class="EnclosingConstructorTests" expecteddir="${main.java}/openJDKtests/lang/Class/getEnclosingConstructor" classpath="${build.classes}/openJDKtests/lang/Class/getEnclosingConstructor"/>
+			<runCompareTest tag="IsSynthetic" class="IsSynthetic" expecteddir="${main.java}/openJDKtests/lang/Class" classpath="${build.classes}/openJDKtests/lang/Class"/>
+			<runCompareTest tag="Exceptions" class="Exceptions" expecteddir="${main.java}/openJDKtests/lang/Class/getMethod" classpath="${build.classes}/openJDKtests/lang/Class/getMethod"/>
+			<runCompareTest tag="NullInParamList" class="NullInParamList" expecteddir="${main.java}/openJDKtests/lang/Class/getMethod" classpath="${build.classes}/openJDKtests/lang/Class/getMethod"/>
+			<runCompareTest tag="ForStaticInnerClass" class="ForStaticInnerClass" expecteddir="${main.java}/openJDKtests/lang/Class/getModifiers" classpath="${build.classes}/openJDKtests/lang/Class/getModifiers"/>
+			<runCompareTest tag="ResolveFrom" class="ResolveFrom" expecteddir="${main.java}/openJDKtests/lang/Class/getModifiers" classpath="${build.classes}/openJDKtests/lang/Class/getModifiers"/>
+			<runCompareTest tag="StripACC_SUPER" class="StripACC_SUPER" expecteddir="${main.java}/openJDKtests/lang/Class/getModifiers" classpath="${build.classes}/openJDKtests/lang/Class/getModifiers"/>
+			<runCompareTest tag="ForInnerClass" class="ForInnerClass" expecteddir="${main.java}/openJDKtests/lang/Class/getModifiers" classpath="${build.classes}/openJDKtests/lang/Class/getModifiers"/>
+			<runCompareTest tag="Sanity" class="Sanity" expecteddir="${main.java}/openJDKtests/lang/Class/getDeclaredClasses" classpath="${build.classes}/openJDKtests/lang/Class/getDeclaredClasses"/>
+			<runCompareTest tag="EnclosingMethodTests" class="EnclosingMethodTests" expecteddir="${main.java}/openJDKtests/lang/Class/getEnclosingMethod" classpath="${build.classes}/openJDKtests/lang/Class/getEnclosingMethod"/>
+			<runCompareTest tag="Sanity" class="Sanity" expecteddir="${main.java}/openJDKtests/lang/Class/getDeclaringClass" classpath="${build.classes}/openJDKtests/lang/Class/getDeclaringClass"/>
+			<runCompareTest tag="Exceptions" class="Exceptions" expecteddir="${main.java}/openJDKtests/lang/Class/getDeclaredMethod" classpath="${build.classes}/openJDKtests/lang/Class/getDeclaredMethod"/>
+			<runCompareTest tag="IsAnnotationType" class="IsAnnotationType" expecteddir="${main.java}/openJDKtests/lang/Class" classpath="${build.classes}/openJDKtests/lang/Class"/>
+			<runCompareTest tag="Exceptions" class="Exceptions" expecteddir="${main.java}/openJDKtests/lang/Class/getDeclaredField" classpath="${build.classes}/openJDKtests/lang/Class/getDeclaredField"/>
+			<runCompareTest tag="NonPublicStaticInitializer" class="NonPublicStaticInitializer" expecteddir="${main.java}/openJDKtests/lang/Class/getMethods" classpath="${build.classes}/openJDKtests/lang/Class/getMethods"/>
+			<runCompareTest tag="StarInheritance" class="StarInheritance" expecteddir="${main.java}/openJDKtests/lang/Class/getMethods" classpath="${build.classes}/openJDKtests/lang/Class/getMethods"/>
+			<runCompareTest tag="Exceptions" class="Exceptions" expecteddir="${main.java}/openJDKtests/lang/Class/getField" classpath="${build.classes}/openJDKtests/lang/Class/getField"/>
+			<runCompareTest tag="Replace" class="Replace" expecteddir="${main.java}/openJDKtests/lang/StringBuffer" classpath="${build.classes}/openJDKtests/lang/StringBuffer"/>
+			<runCompareTest tag="AppendCharSequence" class="AppendCharSequence" expecteddir="${main.java}/openJDKtests/lang/StringBuffer" classpath="${build.classes}/openJDKtests/lang/StringBuffer"/>
+			<runCompareTest tag="GetCharsSrcEndLarger" class="GetCharsSrcEndLarger" expecteddir="${main.java}/openJDKtests/lang/StringBuffer" classpath="${build.classes}/openJDKtests/lang/StringBuffer"/>
+			<runCompareTest tag="Substring" class="Substring" expecteddir="${main.java}/openJDKtests/lang/StringBuffer" classpath="${build.classes}/openJDKtests/lang/StringBuffer"/>
+			<runCompareTest tag="InsertNullString" class="InsertNullString" expecteddir="${main.java}/openJDKtests/lang/StringBuffer" classpath="${build.classes}/openJDKtests/lang/StringBuffer"/>
+			<runCompareTest tag="Exceptions" class="Exceptions" expecteddir="${main.java}/openJDKtests/lang/StringBuffer" classpath="${build.classes}/openJDKtests/lang/StringBuffer"/>
+			<runCompareTest tag="SetLength" class="SetLength" expecteddir="${main.java}/openJDKtests/lang/StringBuffer" classpath="${build.classes}/openJDKtests/lang/StringBuffer"/>
+			<runCompareTest tag="AppendSB" class="AppendSB" expecteddir="${main.java}/openJDKtests/lang/StringBuffer" classpath="${build.classes}/openJDKtests/lang/StringBuffer"/>
+			<runCompareTest tag="InsertMaxValue" class="InsertMaxValue" expecteddir="${main.java}/openJDKtests/lang/StringBuffer" classpath="${build.classes}/openJDKtests/lang/StringBuffer"/>
+			<runCompareTest tag="SBBasher" class="SBBasher" expecteddir="${main.java}/openJDKtests/lang/StringBuffer" classpath="${build.classes}/openJDKtests/lang/StringBuffer"/>
+			<runCompareTest tag="Supplementary" class="Supplementary" expecteddir="${main.java}/openJDKtests/lang/StringBuffer" classpath="${build.classes}/openJDKtests/lang/StringBuffer"/>
+			<runCompareTest tag="IndexOf" class="IndexOf" expecteddir="${main.java}/openJDKtests/lang/StringBuffer" classpath="${build.classes}/openJDKtests/lang/StringBuffer"/>
+			<runCompareTest tag="GetCharsOverLength" class="GetCharsOverLength" expecteddir="${main.java}/openJDKtests/lang/StringBuffer" classpath="${build.classes}/openJDKtests/lang/StringBuffer"/>
+			<runCompareTest tag="Trim" class="Trim" expecteddir="${main.java}/openJDKtests/lang/StringBuffer" classpath="${build.classes}/openJDKtests/lang/StringBuffer"/>
+			<runCompareTest tag="Extrema" class="Extrema" expecteddir="${main.java}/openJDKtests/lang/Double" classpath="${build.classes}/openJDKtests/lang/Double"/>
+			<runCompareTest tag="Constants" class="Constants" expecteddir="${main.java}/openJDKtests/lang/Double" classpath="${build.classes}/openJDKtests/lang/Double"/>
+			<runCompareTest tag="NaNInfinityParsing" class="NaNInfinityParsing" expecteddir="${main.java}/openJDKtests/lang/Double" classpath="${build.classes}/openJDKtests/lang/Double"/>
+			<runCompareTest tag="NonCharacterMapping" class="NonCharacterMapping" expecteddir="${main.java}/openJDKtests/lang/String" classpath="${build.classes}/openJDKtests/lang/String"/>
+			<runCompareTest tag="CaseConvertSameInstance" class="CaseConvertSameInstance" expecteddir="${main.java}/openJDKtests/lang/String" classpath="${build.classes}/openJDKtests/lang/String"/>
+			<runCompareTest tag="SBConstructor" class="SBConstructor" expecteddir="${main.java}/openJDKtests/lang/String" classpath="${build.classes}/openJDKtests/lang/String"/>
+			<runCompareTest tag="ICCBasher" class="ICCBasher" expecteddir="${main.java}/openJDKtests/lang/String" classpath="${build.classes}/openJDKtests/lang/String"/>
+			<runCompareTest tag="ToLowerCase" class="ToLowerCase" expecteddir="${main.java}/openJDKtests/lang/String" classpath="${build.classes}/openJDKtests/lang/String"/>
+			<runCompareTest tag="IsEmpty" class="IsEmpty" expecteddir="${main.java}/openJDKtests/lang/String" classpath="${build.classes}/openJDKtests/lang/String"/>
+			<runCompareTest tag="ToUpperCase" class="ToUpperCase" expecteddir="${main.java}/openJDKtests/lang/String" classpath="${build.classes}/openJDKtests/lang/String"/>
+			<runCompareTest tag="Regex" class="Regex" expecteddir="${main.java}/openJDKtests/lang/String" classpath="${build.classes}/openJDKtests/lang/String"/>
+			<runCompareTest tag="Encodings" class="Encodings" expecteddir="${main.java}/openJDKtests/lang/String" classpath="${build.classes}/openJDKtests/lang/String"/>
+			<runCompareTest tag="Supplementary" class="Supplementary" expecteddir="${main.java}/openJDKtests/lang/String" classpath="${build.classes}/openJDKtests/lang/String"/>
+			<runCompareTest tag="CompareIC" class="CompareIC" expecteddir="${main.java}/openJDKtests/lang/String" classpath="${build.classes}/openJDKtests/lang/String"/>
+			<runCompareTest tag="RegionMatches" class="RegionMatches" expecteddir="${main.java}/openJDKtests/lang/String" classpath="${build.classes}/openJDKtests/lang/String"/>
+			<runCompareTest tag="Split" class="Split" expecteddir="${main.java}/openJDKtests/lang/String" classpath="${build.classes}/openJDKtests/lang/String"/>
+			<runCompareTest tag="ContentEquals" class="ContentEquals" expecteddir="${main.java}/openJDKtests/lang/String" classpath="${build.classes}/openJDKtests/lang/String"/>
+			<runCompareTest tag="IndexOfEmptyInEmpty" class="IndexOfEmptyInEmpty" expecteddir="${main.java}/openJDKtests/lang/String" classpath="${build.classes}/openJDKtests/lang/String"/>
+			<runCompareTest tag="NullQueue" class="NullQueue" expecteddir="${main.java}/openJDKtests/lang/ref" classpath="${build.classes}/openJDKtests/lang/ref"/>
+			<runCompareTest tag="Bash" class="Bash" expecteddir="${main.java}/openJDKtests/lang/ref/SoftReference" classpath="${build.classes}/openJDKtests/lang/ref/SoftReference"/>
+			<runCompareTest tag="EnqueueNullRef" class="EnqueueNullRef" expecteddir="${main.java}/openJDKtests/lang/ref" classpath="${build.classes}/openJDKtests/lang/ref"/>
+			<runCompareTest tag="Insert" class="Insert" expecteddir="${main.java}/openJDKtests/lang/StringBuilder" classpath="${build.classes}/openJDKtests/lang/StringBuilder"/>
+			<runCompareTest tag="Exceptions" class="Exceptions" expecteddir="${main.java}/openJDKtests/lang/StringBuilder" classpath="${build.classes}/openJDKtests/lang/StringBuilder"/>
+			<runCompareTest tag="Supplementary" class="Supplementary" expecteddir="${main.java}/openJDKtests/lang/StringBuilder" classpath="${build.classes}/openJDKtests/lang/StringBuilder"/>
+			<runCompareTest tag="ITLRemoveTest" class="ITLRemoveTest" expecteddir="${main.java}/openJDKtests/lang/InheritableThreadLocal" classpath="${build.classes}/openJDKtests/lang/InheritableThreadLocal"/>
+			<runCompareTest tag="Basic" class="Basic" expecteddir="${main.java}/openJDKtests/lang/InheritableThreadLocal" classpath="${build.classes}/openJDKtests/lang/InheritableThreadLocal"/>
+			<runCompareTest tag="ParseBoolean" class="ParseBoolean" expecteddir="${main.java}/openJDKtests/lang/Boolean" classpath="${build.classes}/openJDKtests/lang/Boolean"/>
+			<runCompareTest tag="Factory" class="Factory" expecteddir="${main.java}/openJDKtests/lang/Boolean" classpath="${build.classes}/openJDKtests/lang/Boolean"/>
+			<runCompareTest tag="MakeBooleanComparable" class="MakeBooleanComparable" expecteddir="${main.java}/openJDKtests/lang/Boolean" classpath="${build.classes}/openJDKtests/lang/Boolean"/>
+			<runCompareTest tag="GetBoolean" class="GetBoolean" expecteddir="${main.java}/openJDKtests/lang/Boolean" classpath="${build.classes}/openJDKtests/lang/Boolean"/>
+			<runCompareTest tag="SetMaxPriority" class="SetMaxPriority" expecteddir="${main.java}/openJDKtests/lang/ThreadGroup" classpath="${build.classes}/openJDKtests/lang/ThreadGroup"/>
+			<runCompareTest tag="Stop" class="Stop" expecteddir="${main.java}/openJDKtests/lang/ThreadGroup" classpath="${build.classes}/openJDKtests/lang/ThreadGroup"/>
+			<runCompareTest tag="Daemon" class="Daemon" expecteddir="${main.java}/openJDKtests/lang/ThreadGroup" classpath="${build.classes}/openJDKtests/lang/ThreadGroup"/>
+			<runCompareTest tag="Basic" class="Basic" expecteddir="${main.java}/openJDKtests/lang/Appendable" classpath="${build.classes}/openJDKtests/lang/Appendable"/>
+		<finishResults/>
+		</target>
 
 
 </project>
